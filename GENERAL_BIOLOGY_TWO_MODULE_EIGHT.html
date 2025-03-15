@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="QUIZ_BEE_TEMPLATE_ORIGINAL .css">
+    <link rel="icon" href="LOGO_THREE_STEM_SOCIETY.png">
+    <title>UC STEM SOCIETY</title>
+</head>
+<body>
+
+<section class="SECTION_ONE">  
+
+<div class="SECTION_ONE_INTRODUCTORY">
+<h1>
+    MODULE 8: FEEDBACK MECHANISMS AND EXCRETORY SYSTEM
+</h1>
+
+<P>
+    INSTRUCTION: Select the correct answer for each question. You have 3 lives to complete the quiz. If you choose the wrong answer or run out of time, you will lose a life. Once all your lives are gone, the quiz will end. Good luck!
+</P>
+
+<a href="STEM_SOC_GEN_BIO.HTML">GO BACK</a>
+</div>
+
+<div class="quiz-container">
+    <div id="quiz" style="display: none;"> <!-- Hidden initially -->
+        <div id="lives" class="lives">Lives: 3</div>
+        <div id="timer" class="timer">Time: 10</div>
+        <div id="question" class="question">Press Start to Begin</div>
+        <div id="answers" class="answers"></div>
+    </div>
+    <button id="startBtn" class="start-btn">Start</button> <!-- Start Button Visible -->
+    <div id="gameOver" class="game-over" style="display: none;">Game Over! Refresh to play again.</div>
+</div>
+
+</section>
+
+ <!-------------------------------------FOOTER-------------------------------------------->
+
+ <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+           <h2>  <i class="fa-regular fa-address-book"></i> Contact Us</h2>
+            <p><b>Location:</b> Governor Pack Road, Baguio City, 2600 Benguet, Philippines</p>
+            <p><b>Number:</b> (074) 442 3316</p>
+        </div>
+        <div class="footer-section">
+            <h2> <i class="fa-regular fa-heart"></i> Social Media</h2>
+            <p><b>Facebook Pages:</b></p>
+            <ul>
+                <li><a href="https://www.facebook.com/UCjaguars" target="_blank">University of the Cordilleras Main</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100095333422873" target="_blank">University of the Cordilleras Integrated School</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100086652038016" target="_blank">University of the Cordilleras STEM Society</a></li>
+                
+                <li><h4>Discord Account:</h4> <a href="https://discord.com/invite/WzKjsMNJTz?fbclid=IwZXh0bgNhZW0CMTEAAR16hWnkV-CPPQCbIBbPKtt9RWL0oVXKhPO3S7PaAE1qZAYDvkvOYpNemH4_aem_YkEnVghO2UHNHANBrTw0vQ" target="_blank">STEM Society Discord</a>
+                </li>
+
+                <li><h4>Instagram: </h4><a href="https://www.instagram.com/katangkay_society/?utm_source=ig_web_button_share_sheet" target="_blank">Katangkay Society</a></li>
+                
+            </ul>
+            
+        </div>
+        <div class="footer-section">
+            <h2><i class="fa-regular fa-envelope"></i> Email Addresses</h2>
+            <ul>
+                <li><a href="email@uc-bcf.edu.ph">University of the Cordilleras Email address</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 University of the Cordilleras Integrated School STEM Society. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+   const quizData = [
+    {
+        question: "What is homeostasis?",
+        options: [
+            "The process of cell division",
+            "The ability to maintain a stable internal environment",
+            "The process of digestion",
+            "The exchange of gases in plants"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which organ is primarily responsible for osmoregulation in humans?",
+        options: [
+            "Liver",
+            "Lungs",
+            "Kidneys",
+            "Heart"
+        ],
+        correct: 2
+    },
+    {
+        question: "Which term describes the body's ability to maintain balance despite external changes?",
+        options: [
+            "Equilibrium",
+            "Homeostasis",
+            "Feedback mechanism",
+            "Excretion"
+        ],
+        correct: 1
+    },
+    {
+        question: "What is the primary function of negative feedback in homeostasis?",
+        options: [
+            "To amplify a change",
+            "To reinforce a stimulus",
+            "To maintain stability by reversing a change",
+            "To increase metabolic rate"
+        ],
+        correct: 2
+    },
+    {
+        question: "Which of the following is an example of negative feedback?",
+        options: [
+            "Blood clotting",
+            "Childbirth contractions",
+            "Regulation of blood sugar levels",
+            "Nerve signal transmission"
+        ],
+        correct: 2
+    },
+    {
+        question: "What is an example of a positive feedback mechanism?",
+        options: [
+            "Sweating to cool the body",
+            "Shivering to produce heat",
+            "Labor contractions during childbirth",
+            "Regulating blood pressure"
+        ],
+        correct: 2
+    },
+    {
+        question: "Which organ regulates blood glucose levels by releasing insulin and glucagon?",
+        options: [
+            "Liver",
+            "Pancreas",
+            "Kidney",
+            "Stomach"
+        ],
+        correct: 1
+    },
+    {
+        question: "What is the function of a receptor in a feedback loop?",
+        options: [
+            "To generate output signals",
+            "To monitor changes and send input to the control center",
+            "To carry out a response",
+            "To store excess energy"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which component of a feedback loop determines the set point?",
+        options: [
+            "Receptor",
+            "Effector",
+            "Control center",
+            "Neurons"
+        ],
+        correct: 2
+    },
+    {
+        question: "What is the primary nitrogenous waste excreted by mammals?",
+        options: [
+            "Ammonia",
+            "Urea",
+            "Uric acid",
+            "Nitrate"
+        ],
+        correct: 1
+    },
+    {
+        question: "What is osmoregulation?",
+        options: [
+            "The process of oxygen transport",
+            "The control of water balance in an organism",
+            "The breakdown of proteins",
+            "The process of blood clotting"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which type of animals excrete ammonia directly?",
+        options: [
+            "Birds",
+            "Mammals",
+            "Amphibians",
+            "Fish"
+        ],
+        correct: 3
+    },
+    {
+        question: "Which organ plays the primary role in excretion in humans?",
+        options: [
+            "Liver",
+            "Kidneys",
+            "Pancreas",
+            "Lungs"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which structure in the kidney is responsible for filtering blood?",
+        options: [
+            "Ureter",
+            "Nephron",
+            "Bladder",
+            "Loop of Henle"
+        ],
+        correct: 1
+    },
+    {
+        question: "What is the process of eliminating metabolic waste products from the body called?",
+        options: [
+            "Secretion",
+            "Absorption",
+            "Excretion",
+            "Filtration"
+        ],
+        correct: 2
+    },
+    {
+        question: "Which component of the nephron is responsible for reabsorbing water and nutrients?",
+        options: [
+            "Bowman’s capsule",
+            "Glomerulus",
+            "Loop of Henle",
+            "Collecting duct"
+        ],
+        correct: 2
+    },
+    {
+        question: "Which animals primarily excrete uric acid as their nitrogenous waste?",
+        options: [
+            "Fish",
+            "Mammals",
+            "Birds and reptiles",
+            "Amphibians"
+        ],
+        correct: 2
+    },
+    {
+        question: "What is the function of the loop of Henle?",
+        options: [
+            "Blood filtration",
+            "Reabsorption of water and salts",
+            "Protein digestion",
+            "Oxygen transport"
+        ],
+        correct: 1
+    },
+    {
+        question: "What is the main role of the excretory system?",
+        options: [
+            "Break down food",
+            "Eliminate metabolic waste and regulate body fluids",
+            "Produce red blood cells",
+            "Transport nutrients"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which structure collects urine before it exits the kidney?",
+        options: [
+            "Bladder",
+            "Ureter",
+            "Renal pelvis",
+            "Nephron"
+        ],
+        correct: 2
+    },
+    {
+        question: "What is the main function of antidiuretic hormone (ADH)?",
+        options: [
+            "Increase urine production",
+            "Stimulate digestion",
+            "Regulate blood pressure",
+            "Promote water retention in the kidneys"
+        ],
+        correct: 3
+    },
+    {
+        question: "Which part of the nephron filters blood plasma?",
+        options: [
+            "Glomerulus",
+            "Loop of Henle",
+            "Collecting duct",
+            "Ureter"
+        ],
+        correct: 0
+    },
+    {
+        question: "Which nitrogenous waste is the most toxic and requires the most water to be excreted?",
+        options: [
+            "Urea",
+            "Uric acid",
+            "Ammonia",
+            "Creatinine"
+        ],
+        correct: 2
+    },
+    {
+        question: "Which feedback mechanism is involved in blood clotting?",
+        options: [
+            "Negative feedback",
+            "Positive feedback",
+            "Homeostasis",
+            "Regulation"
+        ],
+        correct: 1
+    },
+    {
+        question: "What role does the liver play in excretion?",
+        options: [
+            "It stores urine",
+            "It produces bile to break down waste",
+            "It filters blood",
+            "It regulates water levels"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which excretory organ is responsible for removing excess salts and water in fish?",
+        options: [
+            "Gills",
+            "Liver",
+            "Kidneys",
+            "Bladder"
+        ],
+        correct: 0
+    },
+    {
+        question: "What is the role of aldosterone in kidney function?",
+        options: [
+            "Promotes water reabsorption",
+            "Increases salt reabsorption",
+            "Inhibits urine production",
+            "Stimulates digestion"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which body fluid carries waste to the kidneys for excretion?",
+        options: [
+            "Plasma",
+            "Lymph",
+            "Interstitial fluid",
+            "Cerebrospinal fluid"
+        ],
+        correct: 0
+    }
+];
+
+
+ 
+ const livesEl = document.getElementById('lives');
+ const timerEl = document.getElementById('timer');
+ const questionEl = document.getElementById('question');
+ const answersEl = document.getElementById('answers');
+ const startBtn = document.getElementById('startBtn');
+ const gameOverEl = document.getElementById('gameOver');
+ const refreshBtn = document.createElement('button'); // Create refresh button
+ const quizEl = document.getElementById('quiz');
+ 
+ let currentQuestion = 0;
+ let lives = 3;
+ let timer;
+ let timeLeft = 10;
+ let score = 0; // Initialize player score
+ 
+ // Function to shuffle questions array
+ function shuffleQuestions() {
+     for (let i = quizData.length - 1; i > 0; i--) {
+         const j = Math.floor(Math.random() * (i + 1));
+         [quizData[i], quizData[j]] = [quizData[j], quizData[i]]; // Swap elements
+     }
+ }
+ 
+ function loadQuestion() {
+     if (currentQuestion >= quizData.length) {
+         endGame();
+         return;
+     }
+ 
+     // Show quiz container
+     quizEl.style.display = 'block';
+ 
+     // Load current question
+     const q = quizData[currentQuestion];
+     questionEl.textContent = q.question;
+     answersEl.innerHTML = '';
+     q.options.forEach((option, index) => {
+         const btn = document.createElement('button');
+         btn.textContent = option;
+         btn.className = 'answer';
+         btn.addEventListener('click', () => handleAnswer(index));
+         answersEl.appendChild(btn);
+     });
+ 
+     resetTimer();
+ }
+ 
+ function handleAnswer(selected) {
+     const q = quizData[currentQuestion];
+     if (selected === q.correct) {
+         score++; // Increment score for correct answers
+         currentQuestion++;
+         loadQuestion();
+     } else {
+         lives--;
+         updateLives();
+         if (lives === 0) {
+             endGame();
+         }
+     }
+ }
+ 
+ function updateLives() {
+     livesEl.textContent = `Lives: ${lives}`;
+ }
+ 
+ function resetTimer() {
+     clearInterval(timer);
+     timeLeft = 10;
+     timerEl.textContent = `Time: ${timeLeft}`;
+     timer = setInterval(() => {
+         timeLeft--;
+         timerEl.textContent = `Time: ${timeLeft}`;
+         if (timeLeft === 0) {
+             lives--;
+             updateLives();
+             if (lives === 0) {
+                 endGame();
+             } else {
+                 currentQuestion++;
+                 loadQuestion();
+             }
+         }
+     }, 1000);
+ }
+ 
+ function endGame() {
+     clearInterval(timer);
+ 
+     // Hide game elements
+     questionEl.style.display = 'none';
+     answersEl.style.display = 'none';
+     livesEl.style.display = 'none';
+     timerEl.style.display = 'none';
+ 
+     // Display game over message and score
+     gameOverEl.style.display = 'block';
+     gameOverEl.textContent = `Your score is ${score}.`;
+ 
+     // Show refresh button
+     refreshBtn.textContent = "Play Again";
+     refreshBtn.className = 'start-btn';
+     refreshBtn.style.marginTop = '20px';
+     gameOverEl.appendChild(refreshBtn);
+ 
+     // Refresh the page when button is clicked
+     refreshBtn.addEventListener('click', () => {
+         location.reload();
+     });
+ }
+ 
+ // Start Button Click
+ startBtn.addEventListener('click', () => {
+     shuffleQuestions(); // Shuffle questions at the start
+     startBtn.style.display = 'none';
+     loadQuestion();
+ });
+ </script>
+ 
+
+</body>
+</html>

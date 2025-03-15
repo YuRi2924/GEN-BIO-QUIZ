@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="QUIZ_BEE_TEMPLATE_ORIGINAL .css">
+    <link rel="icon" href="LOGO_THREE_STEM_SOCIETY.png">
+    <title>UC STEM SOCIETY</title>
+</head>
+<body>
+
+<section class="SECTION_ONE">  
+
+<div class="SECTION_ONE_INTRODUCTORY">
+<h1>
+    MODULE 3: CELL MODIFICATIONS
+</h1>
+
+<P>
+    INSTRUCTION: Select the correct answer for each question. You have 3 lives to complete the quiz. If you choose the wrong answer or run out of time, you will lose a life. Once all your lives are gone, the quiz will end. Good luck!
+</P>
+
+<a href="STEM_SOC_GEN_BIO.HTML">GO BACK</a>
+</div>
+
+<div class="quiz-container">
+    <div id="quiz" style="display: none;"> <!-- Hidden initially -->
+        <div id="lives" class="lives">Lives: 3</div>
+        <div id="timer" class="timer">Time: 10</div>
+        <div id="question" class="question">Press Start to Begin</div>
+        <div id="answers" class="answers"></div>
+    </div>
+    <button id="startBtn" class="start-btn">Start</button> <!-- Start Button Visible -->
+    <div id="gameOver" class="game-over" style="display: none;">Game Over! Refresh to play again.</div>
+</div>
+
+</section>
+
+ <!-------------------------------------FOOTER-------------------------------------------->
+
+ <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+           <h2>  <i class="fa-regular fa-address-book"></i> Contact Us</h2>
+            <p><b>Location:</b> Governor Pack Road, Baguio City, 2600 Benguet, Philippines</p>
+            <p><b>Number:</b> (074) 442 3316</p>
+        </div>
+        <div class="footer-section">
+            <h2> <i class="fa-regular fa-heart"></i> Social Media</h2>
+            <p><b>Facebook Pages:</b></p>
+            <ul>
+                <li><a href="https://www.facebook.com/UCjaguars" target="_blank">University of the Cordilleras Main</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100095333422873" target="_blank">University of the Cordilleras Integrated School</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100086652038016" target="_blank">University of the Cordilleras STEM Society</a></li>
+                
+                <li><h4>Discord Account:</h4> <a href="https://discord.com/invite/WzKjsMNJTz?fbclid=IwZXh0bgNhZW0CMTEAAR16hWnkV-CPPQCbIBbPKtt9RWL0oVXKhPO3S7PaAE1qZAYDvkvOYpNemH4_aem_YkEnVghO2UHNHANBrTw0vQ" target="_blank">STEM Society Discord</a>
+                </li>
+
+                <li><h4>Instagram: </h4><a href="https://www.instagram.com/katangkay_society/?utm_source=ig_web_button_share_sheet" target="_blank">Katangkay Society</a></li>
+                
+            </ul>
+            
+        </div>
+        <div class="footer-section">
+            <h2><i class="fa-regular fa-envelope"></i> Email Addresses</h2>
+            <ul>
+                <li><a href="email@uc-bcf.edu.ph">University of the Cordilleras Email address</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 University of the Cordilleras Integrated School STEM Society. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+    const quizData = [
+    {
+        question: "What is the main function of cilia in cells?",
+        options: ["Absorbing nutrients", "Facilitating locomotion and moving materials", "Storing energy", "Transporting oxygen"],
+        correct: 1
+    },
+    {
+        question: "Which cell modification is responsible for sperm cell movement?",
+        options: ["Cilia", "Flagella", "Pseudopods", "Microvilli"],
+        correct: 1
+    },
+    {
+        question: "Which of the following structures increases surface area for absorption in the small intestine?",
+        options: ["Pseudopods", "Microvilli", "Cilia", "Desmosomes"],
+        correct: 1
+    },
+    {
+        question: "What is the primary function of pseudopods?",
+        options: ["Locomotion and engulfing prey", "Excreting waste", "Secreting enzymes", "Anchoring cells"],
+        correct: 0
+    },
+    {
+        question: "What is the extracellular matrix (ECM) in plants called?",
+        options: ["Cytoplasm", "Cell wall", "Plasma membrane", "Lysosome"],
+        correct: 1
+    },
+    {
+        question: "Which of the following proteins is a major component of the extracellular matrix (ECM) in animal cells?",
+        options: ["Hemoglobin", "Collagen", "Actin", "Keratin"],
+        correct: 1
+    },
+    {
+        question: "Which cell modification forms rivet-like links between the cytoskeleton and the extracellular matrix?",
+        options: ["Gap junctions", "Desmosomes", "Tight junctions", "Microvilli"],
+        correct: 1
+    },
+    {
+        question: "Which type of junction prevents the leakage of extracellular fluid between cells?",
+        options: ["Gap junctions", "Desmosomes", "Tight junctions", "Adhering junctions"],
+        correct: 2
+    },
+    {
+        question: "Which cell structure allows direct exchange of chemicals between two adjacent cells?",
+        options: ["Gap junctions", "Tight junctions", "Desmosomes", "Pseudopods"],
+        correct: 0
+    },
+    {
+        question: "Which of the following is a function of adhering junctions?",
+        options: ["Allowing chemical communication between cells", "Fastening cells together", "Regulating water flow", "Producing extracellular fluid"],
+        correct: 1
+    },
+    {
+        question: "What is the primary function of villi in the small intestine?",
+        options: ["Protecting the cell", "Increasing surface area for absorption", "Producing enzymes", "Providing structural support"],
+        correct: 1
+    },
+    {
+        question: "Which cell modification is primarily responsible for preventing debris from entering the respiratory tract?",
+        options: ["Flagella", "Cilia", "Pseudopods", "Microvilli"],
+        correct: 1
+    },
+    {
+        question: "Which type of junction is also known as a communicating junction?",
+        options: ["Tight junction", "Adhering junction", "Gap junction", "Desmosome"],
+        correct: 2
+    },
+    {
+        question: "Which of the following is a lateral cell modification?",
+        options: ["Cilia", "Flagella", "Gap junctions", "Microvilli"],
+        correct: 2
+    },
+    {
+        question: "Where are hemidesmosomes primarily found?",
+        options: ["Lateral cell surface", "Basal cell surface", "Apical cell surface", "Inside the nucleus"],
+        correct: 1
+    },
+    {
+        question: "What is the primary function of flagella in cells?",
+        options: ["Anchoring cells", "Facilitating movement", "Excreting waste", "Absorbing nutrients"],
+        correct: 1
+    },
+    {
+        question: "Which of the following is an apical cell modification?",
+        options: ["Gap junction", "Desmosome", "Microvilli", "Adhering junction"],
+        correct: 2
+    },
+    {
+        question: "Which type of junction anchors epithelial cells to the basal lamina?",
+        options: ["Tight junction", "Hemidesmosome", "Gap junction", "Adhering junction"],
+        correct: 1
+    },
+    {
+        question: "What type of protein primarily makes up desmosomes?",
+        options: ["Actin", "Tubulin", "Cadherins", "Collagen"],
+        correct: 2
+    },
+    {
+        question: "Which of the following is NOT a function of the extracellular matrix (ECM)?",
+        options: ["Providing structural support", "Regulating cell behavior", "Producing energy", "Facilitating cell communication"],
+        correct: 2
+    },
+    {
+        question: "Which of the following cell modifications is involved in engulfing foreign particles?",
+        options: ["Cilia", "Pseudopods", "Microvilli", "Tight junctions"],
+        correct: 1
+    },
+    {
+        question: "What is the primary component of plant cell walls?",
+        options: ["Chitin", "Keratin", "Cellulose", "Collagen"],
+        correct: 2
+    },
+    {
+        question: "Which structure allows sperm cells to move toward an egg cell?",
+        options: ["Cilia", "Microvilli", "Flagella", "Gap junction"],
+        correct: 2
+    },
+    {
+        question: "What is the role of tight junctions in epithelial cells?",
+        options: ["Preventing water and solute leakage", "Facilitating nutrient absorption", "Anchoring cells to the basal lamina", "Communicating between adjacent cells"],
+        correct: 0
+    },
+    {
+        question: "Which of the following best describes the function of gap junctions?",
+        options: ["Preventing fluid loss", "Strengthening cell adhesion", "Allowing direct cell communication", "Increasing surface area for absorption"],
+        correct: 2
+    },
+    {
+        question: "Which of the following cell modifications is commonly found in bacteria for movement?",
+        options: ["Cilia", "Microvilli", "Flagella", "Pseudopods"],
+        correct: 2
+    },
+    {
+        question: "Which of the following structures plays a role in immune response by engulfing harmful particles?",
+        options: ["Microvilli", "Cilia", "Pseudopods", "Gap junctions"],
+        correct: 2
+    },
+    {
+        question: "What type of protein connects gap junctions?",
+        options: ["Collagen", "Connexons", "Keratin", "Elastin"],
+        correct: 1
+    },
+    {
+        question: "Which type of cell modification is responsible for increasing the efficiency of nutrient absorption in the intestine?",
+        options: ["Gap junctions", "Microvilli", "Tight junctions", "Desmosomes"],
+        correct: 1
+    }
+];
+
+
+ 
+ const livesEl = document.getElementById('lives');
+ const timerEl = document.getElementById('timer');
+ const questionEl = document.getElementById('question');
+ const answersEl = document.getElementById('answers');
+ const startBtn = document.getElementById('startBtn');
+ const gameOverEl = document.getElementById('gameOver');
+ const refreshBtn = document.createElement('button'); // Create refresh button
+ const quizEl = document.getElementById('quiz');
+ 
+ let currentQuestion = 0;
+ let lives = 3;
+ let timer;
+ let timeLeft = 10;
+ let score = 0; // Initialize player score
+ 
+ // Function to shuffle questions array
+ function shuffleQuestions() {
+     for (let i = quizData.length - 1; i > 0; i--) {
+         const j = Math.floor(Math.random() * (i + 1));
+         [quizData[i], quizData[j]] = [quizData[j], quizData[i]]; // Swap elements
+     }
+ }
+ 
+ function loadQuestion() {
+     if (currentQuestion >= quizData.length) {
+         endGame();
+         return;
+     }
+ 
+     // Show quiz container
+     quizEl.style.display = 'block';
+ 
+     // Load current question
+     const q = quizData[currentQuestion];
+     questionEl.textContent = q.question;
+     answersEl.innerHTML = '';
+     q.options.forEach((option, index) => {
+         const btn = document.createElement('button');
+         btn.textContent = option;
+         btn.className = 'answer';
+         btn.addEventListener('click', () => handleAnswer(index));
+         answersEl.appendChild(btn);
+     });
+ 
+     resetTimer();
+ }
+ 
+ function handleAnswer(selected) {
+     const q = quizData[currentQuestion];
+     if (selected === q.correct) {
+         score++; // Increment score for correct answers
+         currentQuestion++;
+         loadQuestion();
+     } else {
+         lives--;
+         updateLives();
+         if (lives === 0) {
+             endGame();
+         }
+     }
+ }
+ 
+ function updateLives() {
+     livesEl.textContent = `Lives: ${lives}`;
+ }
+ 
+ function resetTimer() {
+     clearInterval(timer);
+     timeLeft = 10;
+     timerEl.textContent = `Time: ${timeLeft}`;
+     timer = setInterval(() => {
+         timeLeft--;
+         timerEl.textContent = `Time: ${timeLeft}`;
+         if (timeLeft === 0) {
+             lives--;
+             updateLives();
+             if (lives === 0) {
+                 endGame();
+             } else {
+                 currentQuestion++;
+                 loadQuestion();
+             }
+         }
+     }, 1000);
+ }
+ 
+ function endGame() {
+     clearInterval(timer);
+ 
+     // Hide game elements
+     questionEl.style.display = 'none';
+     answersEl.style.display = 'none';
+     livesEl.style.display = 'none';
+     timerEl.style.display = 'none';
+ 
+     // Display game over message and score
+     gameOverEl.style.display = 'block';
+     gameOverEl.textContent = `Your score is ${score}.`;
+ 
+     // Show refresh button
+     refreshBtn.textContent = "Play Again";
+     refreshBtn.className = 'start-btn';
+     refreshBtn.style.marginTop = '20px';
+     gameOverEl.appendChild(refreshBtn);
+ 
+     // Refresh the page when button is clicked
+     refreshBtn.addEventListener('click', () => {
+         location.reload();
+     });
+ }
+ 
+ // Start Button Click
+ startBtn.addEventListener('click', () => {
+     shuffleQuestions(); // Shuffle questions at the start
+     startBtn.style.display = 'none';
+     loadQuestion();
+ });
+ </script>
+ 
+
+</body>
+</html>

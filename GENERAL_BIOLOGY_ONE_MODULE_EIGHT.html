@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="QUIZ_BEE_TEMPLATE_ORIGINAL .css">
+    <link rel="icon" href="LOGO_THREE_STEM_SOCIETY.png">
+    <title>UC STEM SOCIETY</title>
+</head>
+<body>
+
+<section class="SECTION_ONE">  
+
+<div class="SECTION_ONE_INTRODUCTORY">
+<h1>
+    MODULE 8: CELLULAR RESPIRATION 
+</h1>
+
+<P>
+    INSTRUCTION: Select the correct answer for each question. You have 3 lives to complete the quiz. If you choose the wrong answer or run out of time, you will lose a life. Once all your lives are gone, the quiz will end. Good luck!
+</P>
+
+<a href="STEM_SOC_GEN_BIO.HTML">GO BACK</a>
+</div>
+
+<div class="quiz-container">
+    <div id="quiz" style="display: none;"> <!-- Hidden initially -->
+        <div id="lives" class="lives">Lives: 3</div>
+        <div id="timer" class="timer">Time: 10</div>
+        <div id="question" class="question">Press Start to Begin</div>
+        <div id="answers" class="answers"></div>
+    </div>
+    <button id="startBtn" class="start-btn">Start</button> <!-- Start Button Visible -->
+    <div id="gameOver" class="game-over" style="display: none;">Game Over! Refresh to play again.</div>
+</div>
+
+</section>
+
+ <!-------------------------------------FOOTER-------------------------------------------->
+
+ <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+           <h2>  <i class="fa-regular fa-address-book"></i> Contact Us</h2>
+            <p><b>Location:</b> Governor Pack Road, Baguio City, 2600 Benguet, Philippines</p>
+            <p><b>Number:</b> (074) 442 3316</p>
+        </div>
+        <div class="footer-section">
+            <h2> <i class="fa-regular fa-heart"></i> Social Media</h2>
+            <p><b>Facebook Pages:</b></p>
+            <ul>
+                <li><a href="https://www.facebook.com/UCjaguars" target="_blank">University of the Cordilleras Main</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100095333422873" target="_blank">University of the Cordilleras Integrated School</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100086652038016" target="_blank">University of the Cordilleras STEM Society</a></li>
+                
+                <li><h4>Discord Account:</h4> <a href="https://discord.com/invite/WzKjsMNJTz?fbclid=IwZXh0bgNhZW0CMTEAAR16hWnkV-CPPQCbIBbPKtt9RWL0oVXKhPO3S7PaAE1qZAYDvkvOYpNemH4_aem_YkEnVghO2UHNHANBrTw0vQ" target="_blank">STEM Society Discord</a>
+                </li>
+
+                <li><h4>Instagram: </h4><a href="https://www.instagram.com/katangkay_society/?utm_source=ig_web_button_share_sheet" target="_blank">Katangkay Society</a></li>
+                
+            </ul>
+            
+        </div>
+        <div class="footer-section">
+            <h2><i class="fa-regular fa-envelope"></i> Email Addresses</h2>
+            <ul>
+                <li><a href="email@uc-bcf.edu.ph">University of the Cordilleras Email address</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 University of the Cordilleras Integrated School STEM Society. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+    const quizData = [
+    {
+        question: "What is the main purpose of cellular respiration?",
+        options: ["To produce oxygen", "To break down glucose and generate ATP", "To store genetic information", "To create proteins"],
+        correct: 1
+    },
+    {
+        question: "Where does glycolysis occur?",
+        options: ["Mitochondria", "Cytoplasm", "Nucleus", "Chloroplast"],
+        correct: 1
+    },
+    {
+        question: "Which molecule is the final electron acceptor in the electron transport chain?",
+        options: ["NADH", "Oxygen", "ATP", "Glucose"],
+        correct: 1
+    },
+    {
+        question: "What is the net gain of ATP in glycolysis?",
+        options: ["2", "4", "6", "8"],
+        correct: 0
+    },
+    {
+        question: "Which stage of cellular respiration produces the most ATP?",
+        options: ["Glycolysis", "Krebs Cycle", "Electron Transport Chain", "Fermentation"],
+        correct: 2
+    },
+    {
+        question: "What is the main product of the Krebs cycle?",
+        options: ["ATP", "Oxygen", "NADH and FADH2", "Lactic acid"],
+        correct: 2
+    },
+    {
+        question: "Which of the following processes occurs in both aerobic and anaerobic respiration?",
+        options: ["Krebs Cycle", "Electron Transport Chain", "Glycolysis", "Fermentation"],
+        correct: 2
+    },
+    {
+        question: "What are the two types of fermentation?",
+        options: ["Lactic acid and alcoholic", "Aerobic and anaerobic", "Photosynthesis and respiration", "ATP and ADP"],
+        correct: 0
+    },
+    {
+        question: "Which type of respiration produces more ATP?",
+        options: ["Aerobic", "Anaerobic", "Fermentation", "Both produce equal ATP"],
+        correct: 0
+    },
+    {
+        question: "What happens to pyruvate before entering the Krebs cycle?",
+        options: ["It is converted to acetyl-CoA", "It is broken down into ATP", "It turns into lactic acid", "It moves to the nucleus"],
+        correct: 0
+    },
+    {
+        question: "Where does the Krebs cycle occur?",
+        options: ["Cytoplasm", "Mitochondrial matrix", "Inner mitochondrial membrane", "Nucleus"],
+        correct: 1
+    },
+    {
+        question: "Which process generates carbon dioxide in cellular respiration?",
+        options: ["Glycolysis", "Krebs Cycle", "Electron Transport Chain", "Fermentation"],
+        correct: 1
+    },
+    {
+        question: "What is the role of ATP synthase?",
+        options: ["Breaks down glucose", "Transports electrons", "Produces ATP using a proton gradient", "Converts NADH to NAD+"],
+        correct: 2
+    },
+    {
+        question: "How many total ATP molecules can be produced from one molecule of glucose in aerobic respiration?",
+        options: ["2", "18", "38", "100"],
+        correct: 2
+    },
+    {
+        question: "Which of the following is NOT a product of cellular respiration?",
+        options: ["ATP", "Oxygen", "Carbon dioxide", "Water"],
+        correct: 1
+    },
+    {
+        question: "What happens when oxygen is not available for cellular respiration?",
+        options: ["The cell stops producing ATP", "Anaerobic respiration or fermentation occurs", "Glucose is stored", "The mitochondria shuts down"],
+        correct: 1
+    },
+    {
+        question: "Which molecule carries high-energy electrons to the electron transport chain?",
+        options: ["ATP", "Glucose", "NADH", "Oxygen"],
+        correct: 2
+    },
+    {
+        question: "Which enzyme is responsible for converting pyruvate into lactate in lactic acid fermentation?",
+        options: ["ATP synthase", "Lactate dehydrogenase", "Hexokinase", "Pyruvate kinase"],
+        correct: 1
+    },
+    {
+        question: "Which type of fermentation is used by yeast to produce alcohol?",
+        options: ["Lactic acid fermentation", "Alcoholic fermentation", "Acidic fermentation", "Aerobic fermentation"],
+        correct: 1
+    },
+    {
+        question: "What is the main disadvantage of fermentation?",
+        options: ["It does not produce ATP", "It is slower than aerobic respiration", "It produces less ATP than aerobic respiration", "It requires oxygen"],
+        correct: 2
+    },
+    {
+        question: "Which of the following is an advantage of anaerobic respiration?",
+        options: ["It produces more ATP", "It occurs faster than aerobic respiration", "It uses oxygen efficiently", "It generates 36 ATP"],
+        correct: 1
+    },
+    {
+        question: "Which gas is a waste product of cellular respiration?",
+        options: ["Oxygen", "Nitrogen", "Carbon dioxide", "Methane"],
+        correct: 2
+    },
+    {
+        question: "What is the role of NAD+ in cellular respiration?",
+        options: ["It produces ATP", "It acts as an electron carrier", "It forms glucose", "It transports oxygen"],
+        correct: 1
+    },
+    {
+        question: "What happens during oxidative phosphorylation?",
+        options: ["Glucose is broken down", "Electrons move through the electron transport chain", "Pyruvate is converted to ATP", "Water is converted to oxygen"],
+        correct: 1
+    },
+    {
+        question: "Which process produces ATP in the absence of oxygen?",
+        options: ["Electron Transport Chain", "Aerobic Respiration", "Fermentation", "Oxidative phosphorylation"],
+        correct: 2
+    },
+    {
+        question: "What is the initial reactant in cellular respiration?",
+        options: ["ATP", "Glucose", "Oxygen", "Carbon dioxide"],
+        correct: 1
+    },
+    {
+        question: "Which molecule stores energy in its high-energy phosphate bonds?",
+        options: ["Glucose", "NADH", "ATP", "Carbon dioxide"],
+        correct: 2
+    },
+    {
+        question: "What happens to electrons in the electron transport chain?",
+        options: ["They generate ATP through chemiosmosis", "They form glucose", "They break down carbon dioxide", "They transport oxygen"],
+        correct: 0
+    },
+    {
+        question: "Which molecule is produced at the end of the electron transport chain?",
+        options: ["Water", "Glucose", "NADH", "ATP"],
+        correct: 0
+    }
+];
+
+
+ 
+ const livesEl = document.getElementById('lives');
+ const timerEl = document.getElementById('timer');
+ const questionEl = document.getElementById('question');
+ const answersEl = document.getElementById('answers');
+ const startBtn = document.getElementById('startBtn');
+ const gameOverEl = document.getElementById('gameOver');
+ const refreshBtn = document.createElement('button'); // Create refresh button
+ const quizEl = document.getElementById('quiz');
+ 
+ let currentQuestion = 0;
+ let lives = 3;
+ let timer;
+ let timeLeft = 10;
+ let score = 0; // Initialize player score
+ 
+ // Function to shuffle questions array
+ function shuffleQuestions() {
+     for (let i = quizData.length - 1; i > 0; i--) {
+         const j = Math.floor(Math.random() * (i + 1));
+         [quizData[i], quizData[j]] = [quizData[j], quizData[i]]; // Swap elements
+     }
+ }
+ 
+ function loadQuestion() {
+     if (currentQuestion >= quizData.length) {
+         endGame();
+         return;
+     }
+ 
+     // Show quiz container
+     quizEl.style.display = 'block';
+ 
+     // Load current question
+     const q = quizData[currentQuestion];
+     questionEl.textContent = q.question;
+     answersEl.innerHTML = '';
+     q.options.forEach((option, index) => {
+         const btn = document.createElement('button');
+         btn.textContent = option;
+         btn.className = 'answer';
+         btn.addEventListener('click', () => handleAnswer(index));
+         answersEl.appendChild(btn);
+     });
+ 
+     resetTimer();
+ }
+ 
+ function handleAnswer(selected) {
+     const q = quizData[currentQuestion];
+     if (selected === q.correct) {
+         score++; // Increment score for correct answers
+         currentQuestion++;
+         loadQuestion();
+     } else {
+         lives--;
+         updateLives();
+         if (lives === 0) {
+             endGame();
+         }
+     }
+ }
+ 
+ function updateLives() {
+     livesEl.textContent = `Lives: ${lives}`;
+ }
+ 
+ function resetTimer() {
+     clearInterval(timer);
+     timeLeft = 10;
+     timerEl.textContent = `Time: ${timeLeft}`;
+     timer = setInterval(() => {
+         timeLeft--;
+         timerEl.textContent = `Time: ${timeLeft}`;
+         if (timeLeft === 0) {
+             lives--;
+             updateLives();
+             if (lives === 0) {
+                 endGame();
+             } else {
+                 currentQuestion++;
+                 loadQuestion();
+             }
+         }
+     }, 1000);
+ }
+ 
+ function endGame() {
+     clearInterval(timer);
+ 
+     // Hide game elements
+     questionEl.style.display = 'none';
+     answersEl.style.display = 'none';
+     livesEl.style.display = 'none';
+     timerEl.style.display = 'none';
+ 
+     // Display game over message and score
+     gameOverEl.style.display = 'block';
+     gameOverEl.textContent = `Your score is ${score}.`;
+ 
+     // Show refresh button
+     refreshBtn.textContent = "Play Again";
+     refreshBtn.className = 'start-btn';
+     refreshBtn.style.marginTop = '20px';
+     gameOverEl.appendChild(refreshBtn);
+ 
+     // Refresh the page when button is clicked
+     refreshBtn.addEventListener('click', () => {
+         location.reload();
+     });
+ }
+ 
+ // Start Button Click
+ startBtn.addEventListener('click', () => {
+     shuffleQuestions(); // Shuffle questions at the start
+     startBtn.style.display = 'none';
+     loadQuestion();
+ });
+ </script>
+ 
+
+</body>
+</html>

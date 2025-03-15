@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="QUIZ_BEE_TEMPLATE_ORIGINAL .css">
+    <link rel="icon" href="LOGO_THREE_STEM_SOCIETY.png">
+    <title>UC STEM SOCIETY</title>
+</head>
+<body>
+
+<section class="SECTION_ONE">  
+
+<div class="SECTION_ONE_INTRODUCTORY">
+<h1>
+    MODULE 7: PHOTOSYNTHESIS
+</h1>
+
+<P>
+    INSTRUCTION: Select the correct answer for each question. You have 3 lives to complete the quiz. If you choose the wrong answer or run out of time, you will lose a life. Once all your lives are gone, the quiz will end. Good luck!
+</P>
+
+<a href="STEM_SOC_GEN_BIO.HTML">GO BACK</a>
+</div>
+
+<div class="quiz-container">
+    <div id="quiz" style="display: none;"> <!-- Hidden initially -->
+        <div id="lives" class="lives">Lives: 3</div>
+        <div id="timer" class="timer">Time: 10</div>
+        <div id="question" class="question">Press Start to Begin</div>
+        <div id="answers" class="answers"></div>
+    </div>
+    <button id="startBtn" class="start-btn">Start</button> <!-- Start Button Visible -->
+    <div id="gameOver" class="game-over" style="display: none;">Game Over! Refresh to play again.</div>
+</div>
+
+</section>
+
+ <!-------------------------------------FOOTER-------------------------------------------->
+
+ <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+           <h2>  <i class="fa-regular fa-address-book"></i> Contact Us</h2>
+            <p><b>Location:</b> Governor Pack Road, Baguio City, 2600 Benguet, Philippines</p>
+            <p><b>Number:</b> (074) 442 3316</p>
+        </div>
+        <div class="footer-section">
+            <h2> <i class="fa-regular fa-heart"></i> Social Media</h2>
+            <p><b>Facebook Pages:</b></p>
+            <ul>
+                <li><a href="https://www.facebook.com/UCjaguars" target="_blank">University of the Cordilleras Main</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100095333422873" target="_blank">University of the Cordilleras Integrated School</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100086652038016" target="_blank">University of the Cordilleras STEM Society</a></li>
+                
+                <li><h4>Discord Account:</h4> <a href="https://discord.com/invite/WzKjsMNJTz?fbclid=IwZXh0bgNhZW0CMTEAAR16hWnkV-CPPQCbIBbPKtt9RWL0oVXKhPO3S7PaAE1qZAYDvkvOYpNemH4_aem_YkEnVghO2UHNHANBrTw0vQ" target="_blank">STEM Society Discord</a>
+                </li>
+
+                <li><h4>Instagram: </h4><a href="https://www.instagram.com/katangkay_society/?utm_source=ig_web_button_share_sheet" target="_blank">Katangkay Society</a></li>
+                
+            </ul>
+            
+        </div>
+        <div class="footer-section">
+            <h2><i class="fa-regular fa-envelope"></i> Email Addresses</h2>
+            <ul>
+                <li><a href="email@uc-bcf.edu.ph">University of the Cordilleras Email address</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 University of the Cordilleras Integrated School STEM Society. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+    const quizData = [
+    {
+        question: "What is the primary pigment involved in photosynthesis?",
+        options: ["Chlorophyll", "Carotenoids", "Xanthophyll", "Anthocyanin"],
+        correct: 0
+    },
+    {
+        question: "Which color of light is least absorbed by chlorophyll?",
+        options: ["Red", "Blue", "Green", "Yellow"],
+        correct: 2
+    },
+    {
+        question: "Where in the plant cell is chlorophyll found?",
+        options: ["Mitochondria", "Nucleus", "Chloroplast", "Ribosome"],
+        correct: 2
+    },
+    {
+        question: "What is the primary function of chlorophyll in photosynthesis?",
+        options: ["Absorbing light energy", "Producing oxygen", "Breaking down glucose", "Transporting water"],
+        correct: 0
+    },
+    {
+        question: "Which layer of the leaf contains the most chloroplasts?",
+        options: ["Epidermis", "Mesophyll", "Xylem", "Phloem"],
+        correct: 1
+    },
+    {
+        question: "What is the overall equation of photosynthesis?",
+        options: ["CO2 + H2O → C6H12O6 + O2", "C6H12O6 + O2 → CO2 + H2O", "H2O + O2 → CO2 + ATP", "CO2 + ATP → C6H12O6"],
+        correct: 0
+    },
+    {
+        question: "Which gas is produced as a byproduct of the light reactions?",
+        options: ["Carbon dioxide", "Oxygen", "Nitrogen", "Hydrogen"],
+        correct: 1
+    },
+    {
+        question: "Which molecule acts as the final electron acceptor in the light reactions?",
+        options: ["ATP", "NADP+", "Oxygen", "RuBP"],
+        correct: 1
+    },
+    {
+        question: "What is the purpose of the electron transport chain in photosynthesis?",
+        options: ["To break down glucose", "To generate ATP and NADPH", "To produce oxygen", "To transport carbon dioxide"],
+        correct: 1
+    },
+    {
+        question: "What is photolysis?",
+        options: ["Splitting of glucose", "Breaking of water using light energy", "Formation of ATP", "Reduction of NADP+"],
+        correct: 1
+    },
+    {
+        question: "Where do the light-dependent reactions take place?",
+        options: ["Stroma", "Cytoplasm", "Thylakoid membrane", "Mitochondria"],
+        correct: 2
+    },
+    {
+        question: "Which molecule carries energy from the light reactions to the Calvin cycle?",
+        options: ["NADPH", "FADH2", "Oxygen", "Glucose"],
+        correct: 0
+    },
+    {
+        question: "What is the main purpose of the Calvin cycle?",
+        options: ["Produce ATP", "Generate oxygen", "Fix carbon into glucose", "Release water"],
+        correct: 2
+    },
+    {
+        question: "Which enzyme is responsible for carbon fixation in the Calvin cycle?",
+        options: ["ATP synthase", "Rubisco", "NADP reductase", "Cytochrome"],
+        correct: 1
+    },
+    {
+        question: "Where does the Calvin cycle take place?",
+        options: ["Thylakoid membrane", "Cytoplasm", "Mitochondria", "Stroma"],
+        correct: 3
+    },
+    {
+        question: "Which molecule provides the carbon needed to form glucose?",
+        options: ["ATP", "NADPH", "Carbon dioxide", "Water"],
+        correct: 2
+    },
+    {
+        question: "What is the first stable product of carbon fixation?",
+        options: ["RuBP", "G3P", "3-PGA", "NADPH"],
+        correct: 2
+    },
+    {
+        question: "How many turns of the Calvin cycle are required to produce one glucose molecule?",
+        options: ["2", "3", "6", "12"],
+        correct: 2
+    },
+    {
+        question: "Which of the following is NOT a product of the light-dependent reactions?",
+        options: ["ATP", "NADPH", "Oxygen", "Glucose"],
+        correct: 3
+    },
+    {
+        question: "What happens to ATP and NADPH after they are used in the Calvin cycle?",
+        options: ["They are broken down and discarded", "They return to the light reactions for recharging", "They convert into glucose", "They exit the chloroplast"],
+        correct: 1
+    },
+    {
+        question: "What happens to the oxygen produced during photosynthesis?",
+        options: ["It is used by the plant for respiration", "It is released into the atmosphere", "It is converted into ATP", "It remains stored in the chloroplast"],
+        correct: 1
+    },
+    {
+        question: "Why is the Calvin cycle also called the light-independent reaction?",
+        options: ["It occurs at night", "It does not require light directly", "It takes place in the mitochondria", "It only produces ATP"],
+        correct: 1
+    },
+    {
+        question: "Which of the following statements is true about photosynthesis?",
+        options: ["It occurs in animal cells", "It produces carbon dioxide", "It is necessary for producing oxygen and glucose", "It is not essential for life on Earth"],
+        correct: 2
+    },
+    {
+        question: "What is the primary source of energy for photosynthesis?",
+        options: ["Water", "Carbon dioxide", "Sunlight", "Glucose"],
+        correct: 2
+    },
+    {
+        question: "Which structure in the leaf allows for gas exchange?",
+        options: ["Xylem", "Phloem", "Stomata", "Cuticle"],
+        correct: 2
+    },
+    {
+        question: "What role does ATP synthase play in photosynthesis?",
+        options: ["Splits water molecules", "Fixes carbon dioxide", "Produces ATP from ADP", "Transfers electrons to NADP+"],
+        correct: 2
+    },
+    {
+        question: "What is the final product of photosynthesis that provides energy to plants?",
+        options: ["Oxygen", "Glucose", "ATP", "Carbon dioxide"],
+        correct: 1
+    },
+    {
+        question: "Which statement best describes the relationship between the light reactions and the Calvin cycle?",
+        options: ["The Calvin cycle provides ATP for the light reactions", "The light reactions provide ATP and NADPH for the Calvin cycle", "They are independent processes", "Both occur in the mitochondria"],
+        correct: 1
+    },
+    {
+        question: "Which of the following best describes the process of chemiosmosis in photosynthesis?",
+        options: ["The movement of electrons through the thylakoid membrane", "The diffusion of hydrogen ions across a membrane to generate ATP", "The breakdown of glucose to release energy", "The transport of water into the chloroplast"],
+        correct: 1
+    }
+];
+
+
+ 
+ const livesEl = document.getElementById('lives');
+ const timerEl = document.getElementById('timer');
+ const questionEl = document.getElementById('question');
+ const answersEl = document.getElementById('answers');
+ const startBtn = document.getElementById('startBtn');
+ const gameOverEl = document.getElementById('gameOver');
+ const refreshBtn = document.createElement('button'); // Create refresh button
+ const quizEl = document.getElementById('quiz');
+ 
+ let currentQuestion = 0;
+ let lives = 3;
+ let timer;
+ let timeLeft = 10;
+ let score = 0; // Initialize player score
+ 
+ // Function to shuffle questions array
+ function shuffleQuestions() {
+     for (let i = quizData.length - 1; i > 0; i--) {
+         const j = Math.floor(Math.random() * (i + 1));
+         [quizData[i], quizData[j]] = [quizData[j], quizData[i]]; // Swap elements
+     }
+ }
+ 
+ function loadQuestion() {
+     if (currentQuestion >= quizData.length) {
+         endGame();
+         return;
+     }
+ 
+     // Show quiz container
+     quizEl.style.display = 'block';
+ 
+     // Load current question
+     const q = quizData[currentQuestion];
+     questionEl.textContent = q.question;
+     answersEl.innerHTML = '';
+     q.options.forEach((option, index) => {
+         const btn = document.createElement('button');
+         btn.textContent = option;
+         btn.className = 'answer';
+         btn.addEventListener('click', () => handleAnswer(index));
+         answersEl.appendChild(btn);
+     });
+ 
+     resetTimer();
+ }
+ 
+ function handleAnswer(selected) {
+     const q = quizData[currentQuestion];
+     if (selected === q.correct) {
+         score++; // Increment score for correct answers
+         currentQuestion++;
+         loadQuestion();
+     } else {
+         lives--;
+         updateLives();
+         if (lives === 0) {
+             endGame();
+         }
+     }
+ }
+ 
+ function updateLives() {
+     livesEl.textContent = `Lives: ${lives}`;
+ }
+ 
+ function resetTimer() {
+     clearInterval(timer);
+     timeLeft = 10;
+     timerEl.textContent = `Time: ${timeLeft}`;
+     timer = setInterval(() => {
+         timeLeft--;
+         timerEl.textContent = `Time: ${timeLeft}`;
+         if (timeLeft === 0) {
+             lives--;
+             updateLives();
+             if (lives === 0) {
+                 endGame();
+             } else {
+                 currentQuestion++;
+                 loadQuestion();
+             }
+         }
+     }, 1000);
+ }
+ 
+ function endGame() {
+     clearInterval(timer);
+ 
+     // Hide game elements
+     questionEl.style.display = 'none';
+     answersEl.style.display = 'none';
+     livesEl.style.display = 'none';
+     timerEl.style.display = 'none';
+ 
+     // Display game over message and score
+     gameOverEl.style.display = 'block';
+     gameOverEl.textContent = `Your score is ${score}.`;
+ 
+     // Show refresh button
+     refreshBtn.textContent = "Play Again";
+     refreshBtn.className = 'start-btn';
+     refreshBtn.style.marginTop = '20px';
+     gameOverEl.appendChild(refreshBtn);
+ 
+     // Refresh the page when button is clicked
+     refreshBtn.addEventListener('click', () => {
+         location.reload();
+     });
+ }
+ 
+ // Start Button Click
+ startBtn.addEventListener('click', () => {
+     shuffleQuestions(); // Shuffle questions at the start
+     startBtn.style.display = 'none';
+     loadQuestion();
+ });
+ </script>
+ 
+
+</body>
+</html>

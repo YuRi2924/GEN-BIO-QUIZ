@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="QUIZ_BEE_TEMPLATE_ORIGINAL .css">
+    <link rel="icon" href="LOGO_THREE_STEM_SOCIETY.png">
+    <title>UC STEM SOCIETY</title>
+</head>
+<body>
+
+<section class="SECTION_ONE">  
+
+<div class="SECTION_ONE_INTRODUCTORY">
+<h1>
+    MODULE 1: THE CELL THEORY
+</h1>
+
+<P>
+    INSTRUCTION: Select the correct answer for each question. You have 3 lives to complete the quiz. If you choose the wrong answer or run out of time, you will lose a life. Once all your lives are gone, the quiz will end. Good luck!
+</P>
+
+<a href="STEM_SOC_GEN_BIO.HTML">GO BACK</a>
+</div>
+
+<div class="quiz-container">
+    <div id="quiz" style="display: none;"> <!-- Hidden initially -->
+        <div id="lives" class="lives">Lives: 3</div>
+        <div id="timer" class="timer">Time: 10</div>
+        <div id="question" class="question">Press Start to Begin</div>
+        <div id="answers" class="answers"></div>
+    </div>
+    <button id="startBtn" class="start-btn">Start</button> <!-- Start Button Visible -->
+    <div id="gameOver" class="game-over" style="display: none;">Game Over! Refresh to play again.</div>
+</div>
+
+</section>
+
+ <!-------------------------------------FOOTER-------------------------------------------->
+
+ <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+           <h2>  <i class="fa-regular fa-address-book"></i> Contact Us</h2>
+            <p><b>Location:</b> Governor Pack Road, Baguio City, 2600 Benguet, Philippines</p>
+            <p><b>Number:</b> (074) 442 3316</p>
+        </div>
+        <div class="footer-section">
+            <h2> <i class="fa-regular fa-heart"></i> Social Media</h2>
+            <p><b>Facebook Pages:</b></p>
+            <ul>
+                <li><a href="https://www.facebook.com/UCjaguars" target="_blank">University of the Cordilleras Main</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100095333422873" target="_blank">University of the Cordilleras Integrated School</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100086652038016" target="_blank">University of the Cordilleras STEM Society</a></li>
+                
+                <li><h4>Discord Account:</h4> <a href="https://discord.com/invite/WzKjsMNJTz?fbclid=IwZXh0bgNhZW0CMTEAAR16hWnkV-CPPQCbIBbPKtt9RWL0oVXKhPO3S7PaAE1qZAYDvkvOYpNemH4_aem_YkEnVghO2UHNHANBrTw0vQ" target="_blank">STEM Society Discord</a>
+                </li>
+
+                <li><h4>Instagram: </h4><a href="https://www.instagram.com/katangkay_society/?utm_source=ig_web_button_share_sheet" target="_blank">Katangkay Society</a></li>
+                
+            </ul>
+            
+        </div>
+        <div class="footer-section">
+            <h2><i class="fa-regular fa-envelope"></i> Email Addresses</h2>
+            <ul>
+                <li><a href="email@uc-bcf.edu.ph">University of the Cordilleras Email address</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 University of the Cordilleras Integrated School STEM Society. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+    const quizData = [
+    { question: "Who invented one of the first prototypes of the microscope?", options: ["Robert Hooke", "Zacharias Jansen", "Anton van Leeuwenhoek", "Rudolf Virchow"], correct: 1 },
+
+    { question: "Who first coined the term 'cell' after observing cork under a microscope?", options: ["Robert Hooke", "Theodor Schwann", "Matthias Schleiden", "Anton van Leeuwenhoek"], correct: 0 },
+
+    { question: "Which scientist is credited with discovering blood cells, sperm cells, and 'animalcules'?", options: ["Matthias Schleiden", "Theodor Schwann", "Anton van Leeuwenhoek", "Rudolf Virchow"], correct: 2 },
+
+    { question: "What was the contribution of Lorenz Oken to cell theory?", options: ["He discovered the cell nucleus", "He proposed that all organisms are composed of cells", "He discovered mitochondria", "He invented the microscope"], correct: 1 },
+
+    { question: "Who discovered the nucleus in plant cells?", options: ["Robert Brown", "Matthias Schleiden", "Rudolf Virchow", "Theodor Schwann"], correct: 0 },
+
+    { question: "The term 'sarcode,' later changed to 'protoplasm,' was first recognized by:", options: ["Felix Dujardin", "Matthias Schleiden", "Rudolf Virchow", "Robert Brown"], correct: 0 },
+
+    { question: "What was the significant contribution of Matthias Schleiden and Theodor Schwann to cell theory?", options: ["They discovered mitochondria", "They stated that all living things are made of cells", "They discovered the nucleus", "They developed the germ theory"], correct: 1 },
+
+    { question: "Which scientist stated that all cells come from preexisting cells?", options: ["Matthias Schleiden", "Theodor Schwann", "Rudolf Virchow", "Anton van Leeuwenhoek"], correct: 2 },
+
+    { question: "How many main principles does the modern cell theory have?", options: ["Two", "Three", "Four", "Five"], correct: 1 },
+
+    { question: "What does the cell theory state about the basic unit of life?", options: ["Cells are only found in plants", "Cells can form spontaneously", "The cell is the fundamental unit of life", "Atoms are the basic unit of life"], correct: 2 },
+
+    { question: "What is the primary function of the nucleus?", options: ["Store energy", "Control cell activities and store genetic material", "Transport proteins", "Produce ATP"], correct: 1 },
+
+    { question: "Which organelle is responsible for ATP production?", options: ["Nucleus", "Ribosomes", "Mitochondria", "Endoplasmic reticulum"], correct: 2 },
+
+    { question: "What is the function of ribosomes?", options: ["Transport materials", "Synthesize proteins", "Store waste", "Control cell division"], correct: 1 },
+
+    { question: "Which of the following is a function of the rough endoplasmic reticulum?", options: ["Lipid synthesis", "Protein synthesis and transport", "Energy production", "Cell movement"], correct: 1 },
+
+    { question: "Which organelle is responsible for modifying, packaging, and sorting proteins?", options: ["Lysosome", "Golgi apparatus", "Mitochondria", "Ribosomes"], correct: 1 },
+
+    { question: "Which organelle is known as the 'powerhouse of the cell'?", options: ["Lysosome", "Golgi apparatus", "Mitochondria", "Ribosome"], correct: 2 },
+
+    { question: "What is the function of lysosomes?", options: ["Protein synthesis", "Digesting and breaking down cellular waste", "Providing energy", "Producing lipids"], correct: 1 },
+
+    { question: "Which of the following structures is found only in plant cells?", options: ["Centriole", "Chloroplast", "Lysosome", "Mitochondria"], correct: 1 },
+
+    { question: "The cell membrane is primarily composed of:", options: ["Proteins only", "Carbohydrates", "A lipid bilayer with proteins", "Nucleic acids"], correct: 2 },
+
+    { question: "The rigid structure that provides support to plant cells is called the:", options: ["Cell membrane", "Cell wall", "Cytoplasm", "Golgi apparatus"], correct: 1 },
+
+    { question: "What type of transport requires energy (ATP)?", options: ["Osmosis", "Diffusion", "Active transport", "Facilitated diffusion"], correct: 2 },
+
+    { question: "What are the three basic parts of a typical eukaryotic cell?",  options: ["Nucleus, cytoplasm, ribosomes", "Plasma membrane, cytoplasm, nucleus", "Cell wall, DNA, cytoplasm", "Ribosomes, mitochondria, plasma membrane"], correct: 1 },
+    
+    { question: "The movement of water molecules across a selectively permeable membrane is called:", options: ["Diffusion", "Osmosis", "Active transport", "Endocytosis"], correct: 1 },
+
+    { question: "Which process involves the engulfing of large particles into the cell?", options: ["Exocytosis", "Phagocytosis", "Pinocytosis", "Diffusion"], correct: 1 },
+
+    { question: "Which type of solution causes a cell to shrink due to water leaving the cell?", options: ["Hypotonic", "Hypertonic", "Isotonic", "Neutral"], correct: 1 },
+
+    { question: "In which phase of the cell cycle does DNA replication occur?", options: ["Prophase", "Metaphase", "Interphase", "Cytokinesis"], correct: 2 },
+
+    { question: "Which of the following organisms are made up of eukaryotic cells?",  options: ["Bacteria", "Archaea", "Fungi", "Eubacteria"], correct: 2  },
+
+    {  question: "What does the word 'prokaryote' mean in Greek?", options: ["Before the nucleus", "True nucleus", "Small cell", "Single-celled organism"], correct: 0 },
+
+    { question: "Cytokinesis refers to:", options: ["The replication of DNA", "The division of the nucleus", "The splitting of the cytoplasm to form two daughter cells", "The alignment of chromosomes"], correct: 2 },
+
+    { question: "Which structure is responsible for pulling chromosomes apart during cell division?", options: ["Centrioles", "Ribosomes", "Mitochondria", "Nucleus"], correct: 0 }
+];
+
+
+ 
+ const livesEl = document.getElementById('lives');
+ const timerEl = document.getElementById('timer');
+ const questionEl = document.getElementById('question');
+ const answersEl = document.getElementById('answers');
+ const startBtn = document.getElementById('startBtn');
+ const gameOverEl = document.getElementById('gameOver');
+ const refreshBtn = document.createElement('button'); // Create refresh button
+ const quizEl = document.getElementById('quiz');
+ 
+ let currentQuestion = 0;
+ let lives = 3;
+ let timer;
+ let timeLeft = 10;
+ let score = 0; // Initialize player score
+ 
+ // Function to shuffle questions array
+ function shuffleQuestions() {
+     for (let i = quizData.length - 1; i > 0; i--) {
+         const j = Math.floor(Math.random() * (i + 1));
+         [quizData[i], quizData[j]] = [quizData[j], quizData[i]]; // Swap elements
+     }
+ }
+ 
+ function loadQuestion() {
+     if (currentQuestion >= quizData.length) {
+         endGame();
+         return;
+     }
+ 
+     // Show quiz container
+     quizEl.style.display = 'block';
+ 
+     // Load current question
+     const q = quizData[currentQuestion];
+     questionEl.textContent = q.question;
+     answersEl.innerHTML = '';
+     q.options.forEach((option, index) => {
+         const btn = document.createElement('button');
+         btn.textContent = option;
+         btn.className = 'answer';
+         btn.addEventListener('click', () => handleAnswer(index));
+         answersEl.appendChild(btn);
+     });
+ 
+     resetTimer();
+ }
+ 
+ function handleAnswer(selected) {
+     const q = quizData[currentQuestion];
+     if (selected === q.correct) {
+         score++; // Increment score for correct answers
+         currentQuestion++;
+         loadQuestion();
+     } else {
+         lives--;
+         updateLives();
+         if (lives === 0) {
+             endGame();
+         }
+     }
+ }
+ 
+ function updateLives() {
+     livesEl.textContent = `Lives: ${lives}`;
+ }
+ 
+ function resetTimer() {
+     clearInterval(timer);
+     timeLeft = 10;
+     timerEl.textContent = `Time: ${timeLeft}`;
+     timer = setInterval(() => {
+         timeLeft--;
+         timerEl.textContent = `Time: ${timeLeft}`;
+         if (timeLeft === 0) {
+             lives--;
+             updateLives();
+             if (lives === 0) {
+                 endGame();
+             } else {
+                 currentQuestion++;
+                 loadQuestion();
+             }
+         }
+     }, 1000);
+ }
+ 
+ function endGame() {
+     clearInterval(timer);
+ 
+     // Hide game elements
+     questionEl.style.display = 'none';
+     answersEl.style.display = 'none';
+     livesEl.style.display = 'none';
+     timerEl.style.display = 'none';
+ 
+     // Display game over message and score
+     gameOverEl.style.display = 'block';
+     gameOverEl.textContent = `Your score is ${score}.`;
+ 
+     // Show refresh button
+     refreshBtn.textContent = "Play Again";
+     refreshBtn.className = 'start-btn';
+     refreshBtn.style.marginTop = '20px';
+     gameOverEl.appendChild(refreshBtn);
+ 
+     // Refresh the page when button is clicked
+     refreshBtn.addEventListener('click', () => {
+         location.reload();
+     });
+ }
+ 
+ // Start Button Click
+ startBtn.addEventListener('click', () => {
+     shuffleQuestions(); // Shuffle questions at the start
+     startBtn.style.display = 'none';
+     loadQuestion();
+ });
+ </script>
+ 
+
+</body>
+</html>

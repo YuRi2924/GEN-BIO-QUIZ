@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="QUIZ_BEE_TEMPLATE_ORIGINAL .css">
+    <link rel="icon" href="LOGO_THREE_STEM_SOCIETY.png">
+    <title>UC STEM SOCIETY</title>
+</head>
+<body>
+
+<section class="SECTION_ONE">  
+
+<div class="SECTION_ONE_INTRODUCTORY">
+<h1>
+    MODULE 7: RESPIRATORY AND CIRCULATORY SYSTEM
+</h1>
+
+<P>
+    INSTRUCTION: Select the correct answer for each question. You have 3 lives to complete the quiz. If you choose the wrong answer or run out of time, you will lose a life. Once all your lives are gone, the quiz will end. Good luck!
+</P>
+
+<a href="STEM_SOC_GEN_BIO.HTML">GO BACK</a>
+</div>
+
+<div class="quiz-container">
+    <div id="quiz" style="display: none;"> <!-- Hidden initially -->
+        <div id="lives" class="lives">Lives: 3</div>
+        <div id="timer" class="timer">Time: 10</div>
+        <div id="question" class="question">Press Start to Begin</div>
+        <div id="answers" class="answers"></div>
+    </div>
+    <button id="startBtn" class="start-btn">Start</button> <!-- Start Button Visible -->
+    <div id="gameOver" class="game-over" style="display: none;">Game Over! Refresh to play again.</div>
+</div>
+
+</section>
+
+ <!-------------------------------------FOOTER-------------------------------------------->
+
+ <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+           <h2>  <i class="fa-regular fa-address-book"></i> Contact Us</h2>
+            <p><b>Location:</b> Governor Pack Road, Baguio City, 2600 Benguet, Philippines</p>
+            <p><b>Number:</b> (074) 442 3316</p>
+        </div>
+        <div class="footer-section">
+            <h2> <i class="fa-regular fa-heart"></i> Social Media</h2>
+            <p><b>Facebook Pages:</b></p>
+            <ul>
+                <li><a href="https://www.facebook.com/UCjaguars" target="_blank">University of the Cordilleras Main</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100095333422873" target="_blank">University of the Cordilleras Integrated School</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100086652038016" target="_blank">University of the Cordilleras STEM Society</a></li>
+                
+                <li><h4>Discord Account:</h4> <a href="https://discord.com/invite/WzKjsMNJTz?fbclid=IwZXh0bgNhZW0CMTEAAR16hWnkV-CPPQCbIBbPKtt9RWL0oVXKhPO3S7PaAE1qZAYDvkvOYpNemH4_aem_YkEnVghO2UHNHANBrTw0vQ" target="_blank">STEM Society Discord</a>
+                </li>
+
+                <li><h4>Instagram: </h4><a href="https://www.instagram.com/katangkay_society/?utm_source=ig_web_button_share_sheet" target="_blank">Katangkay Society</a></li>
+                
+            </ul>
+            
+        </div>
+        <div class="footer-section">
+            <h2><i class="fa-regular fa-envelope"></i> Email Addresses</h2>
+            <ul>
+                <li><a href="email@uc-bcf.edu.ph">University of the Cordilleras Email address</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 University of the Cordilleras Integrated School STEM Society. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+   const quizData = [
+    { question: "What is the main function of the circulatory system?", options: ["Transport oxygen and nutrients", "Produce hormones", "Store energy", "Control body movement"], correct: 0 },
+    
+    { question: "Which component of blood is responsible for oxygen transport?", options: ["Red blood cells", "White blood cells", "Platelets", "Plasma"], correct: 0 },
+    
+    { question: "What part of the respiratory system is responsible for gas exchange?", options: ["Trachea", "Bronchi", "Alveoli", "Larynx"], correct: 2 },
+    
+    { question: "Which type of muscle is found in the heart?", options: ["Smooth muscle", "Skeletal muscle", "Cardiac muscle", "Voluntary muscle"], correct: 2 },
+    
+    { question: "What is the function of hemoglobin in red blood cells?", options: ["Carry oxygen", "Fight infections", "Help in clotting", "Store energy"], correct: 0 },
+
+    { question: "Which blood vessel carries oxygen-rich blood from the lungs to the heart?", options: ["Pulmonary artery", "Pulmonary vein", "Aorta", "Vena cava"], correct: 1 },
+
+    { question: "What is the process of oxygen moving from the alveoli into the blood called?", options: ["Filtration", "Osmosis", "Diffusion", "Absorption"], correct: 2 },
+
+    { question: "Which organ produces insulin to regulate blood sugar?", options: ["Liver", "Pancreas", "Heart", "Kidney"], correct: 1 },
+
+    { question: "What is the name of the structure that prevents food from entering the trachea?", options: ["Larynx", "Pharynx", "Epiglottis", "Diaphragm"], correct: 2 },
+
+    { question: "Which gas is exhaled as a waste product of cellular respiration?", options: ["Oxygen", "Carbon dioxide", "Nitrogen", "Hydrogen"], correct: 1 },
+
+    { question: "What type of tissue is responsible for transmitting signals in the body?", options: ["Muscle tissue", "Connective tissue", "Nervous tissue", "Epithelial tissue"], correct: 2 },
+
+    { question: "Which component of the blood is involved in clotting?", options: ["Red blood cells", "White blood cells", "Platelets", "Plasma"], correct: 2 },
+
+    { question: "What is the largest artery in the body?", options: ["Pulmonary artery", "Aorta", "Vena cava", "Carotid artery"], correct: 1 },
+
+    { question: "Which chamber of the heart pumps oxygenated blood to the body?", options: ["Right atrium", "Right ventricle", "Left atrium", "Left ventricle"], correct: 3 },
+
+    { question: "What is the primary function of the lymphatic system?", options: ["Transport oxygen", "Filter out toxins", "Produce hormones", "Regulate blood pressure"], correct: 1 },
+
+    { question: "Which of the following is a function of white blood cells?", options: ["Transport oxygen", "Clot blood", "Fight infections", "Regulate body temperature"], correct: 2 },
+
+    { question: "What type of respiration requires oxygen?", options: ["Anaerobic respiration", "Aerobic respiration", "Fermentation", "Photosynthesis"], correct: 1 },
+
+    { question: "What structure in plants controls gas exchange?", options: ["Xylem", "Phloem", "Stomata", "Root hairs"], correct: 2 },
+
+    { question: "Which part of the brain controls respiration?", options: ["Cerebrum", "Cerebellum", "Medulla oblongata", "Hypothalamus"], correct: 2 },
+
+    { question: "Which blood vessel carries deoxygenated blood to the lungs?", options: ["Aorta", "Pulmonary artery", "Pulmonary vein", "Carotid artery"], correct: 1 },
+
+    { question: "What is the role of myoglobin in muscles?", options: ["Store oxygen", "Break down glucose", "Produce lactic acid", "Remove carbon dioxide"], correct: 0 },
+
+    { question: "Which type of muscle is involuntary and found in organs?", options: ["Skeletal", "Cardiac", "Smooth", "Striated"], correct: 2 },
+
+    { question: "What is the term for uncontrolled cell division?", options: ["Apoptosis", "Meiosis", "Mitosis", "Cancer"], correct: 3 },
+
+    { question: "Which gas is essential for cellular respiration?", options: ["Oxygen", "Carbon dioxide", "Nitrogen", "Hydrogen"], correct: 0 },
+
+    { question: "Which organ is responsible for filtering waste from the blood?", options: ["Liver", "Heart", "Kidney", "Lungs"], correct: 2 },
+
+    { question: "What is the process by which blood cells are produced?", options: ["Osmosis", "Hemopoiesis", "Diffusion", "Filtration"], correct: 1 },
+
+    { question: "Which of the following is part of the respiratory system?", options: ["Small intestine", "Esophagus", "Trachea", "Kidney"], correct: 2 },
+
+    { question: "What is the main function of the heart valves?", options: ["Pump blood", "Store oxygen", "Prevent backflow", "Filter waste"], correct: 2 },
+
+    { question: "Which structure prevents the mixing of oxygenated and deoxygenated blood in the heart?", options: ["Aorta", "Septum", "Vena cava", "Pulmonary vein"], correct: 1 },
+
+    { question: "What is the main function of red bone marrow?", options: ["Store fat", "Produce blood cells", "Support the body", "Regulate blood pressure"], correct: 1 }
+];
+
+
+ 
+ const livesEl = document.getElementById('lives');
+ const timerEl = document.getElementById('timer');
+ const questionEl = document.getElementById('question');
+ const answersEl = document.getElementById('answers');
+ const startBtn = document.getElementById('startBtn');
+ const gameOverEl = document.getElementById('gameOver');
+ const refreshBtn = document.createElement('button'); // Create refresh button
+ const quizEl = document.getElementById('quiz');
+ 
+ let currentQuestion = 0;
+ let lives = 3;
+ let timer;
+ let timeLeft = 10;
+ let score = 0; // Initialize player score
+ 
+ // Function to shuffle questions array
+ function shuffleQuestions() {
+     for (let i = quizData.length - 1; i > 0; i--) {
+         const j = Math.floor(Math.random() * (i + 1));
+         [quizData[i], quizData[j]] = [quizData[j], quizData[i]]; // Swap elements
+     }
+ }
+ 
+ function loadQuestion() {
+     if (currentQuestion >= quizData.length) {
+         endGame();
+         return;
+     }
+ 
+     // Show quiz container
+     quizEl.style.display = 'block';
+ 
+     // Load current question
+     const q = quizData[currentQuestion];
+     questionEl.textContent = q.question;
+     answersEl.innerHTML = '';
+     q.options.forEach((option, index) => {
+         const btn = document.createElement('button');
+         btn.textContent = option;
+         btn.className = 'answer';
+         btn.addEventListener('click', () => handleAnswer(index));
+         answersEl.appendChild(btn);
+     });
+ 
+     resetTimer();
+ }
+ 
+ function handleAnswer(selected) {
+     const q = quizData[currentQuestion];
+     if (selected === q.correct) {
+         score++; // Increment score for correct answers
+         currentQuestion++;
+         loadQuestion();
+     } else {
+         lives--;
+         updateLives();
+         if (lives === 0) {
+             endGame();
+         }
+     }
+ }
+ 
+ function updateLives() {
+     livesEl.textContent = `Lives: ${lives}`;
+ }
+ 
+ function resetTimer() {
+     clearInterval(timer);
+     timeLeft = 10;
+     timerEl.textContent = `Time: ${timeLeft}`;
+     timer = setInterval(() => {
+         timeLeft--;
+         timerEl.textContent = `Time: ${timeLeft}`;
+         if (timeLeft === 0) {
+             lives--;
+             updateLives();
+             if (lives === 0) {
+                 endGame();
+             } else {
+                 currentQuestion++;
+                 loadQuestion();
+             }
+         }
+     }, 1000);
+ }
+ 
+ function endGame() {
+     clearInterval(timer);
+ 
+     // Hide game elements
+     questionEl.style.display = 'none';
+     answersEl.style.display = 'none';
+     livesEl.style.display = 'none';
+     timerEl.style.display = 'none';
+ 
+     // Display game over message and score
+     gameOverEl.style.display = 'block';
+     gameOverEl.textContent = `Your score is ${score}.`;
+ 
+     // Show refresh button
+     refreshBtn.textContent = "Play Again";
+     refreshBtn.className = 'start-btn';
+     refreshBtn.style.marginTop = '20px';
+     gameOverEl.appendChild(refreshBtn);
+ 
+     // Refresh the page when button is clicked
+     refreshBtn.addEventListener('click', () => {
+         location.reload();
+     });
+ }
+ 
+ // Start Button Click
+ startBtn.addEventListener('click', () => {
+     shuffleQuestions(); // Shuffle questions at the start
+     startBtn.style.display = 'none';
+     loadQuestion();
+ });
+ </script>
+ 
+
+</body>
+</html>

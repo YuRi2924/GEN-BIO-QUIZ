@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="QUIZ_BEE_TEMPLATE_ORIGINAL .css">
+    <link rel="icon" href="LOGO_THREE_STEM_SOCIETY.png">
+    <title>UC STEM SOCIETY</title>
+</head>
+<body>
+
+<section class="SECTION_ONE">  
+
+<div class="SECTION_ONE_INTRODUCTORY">
+<h1>
+    MODULE 6: BIOLOGICAL MOLECULES
+</h1>
+
+<P>
+    INSTRUCTION: Select the correct answer for each question. You have 3 lives to complete the quiz. If you choose the wrong answer or run out of time, you will lose a life. Once all your lives are gone, the quiz will end. Good luck!
+</P>
+
+<a href="STEM_SOC_GEN_BIO.HTML">GO BACK</a>
+</div>
+
+<div class="quiz-container">
+    <div id="quiz" style="display: none;"> <!-- Hidden initially -->
+        <div id="lives" class="lives">Lives: 3</div>
+        <div id="timer" class="timer">Time: 10</div>
+        <div id="question" class="question">Press Start to Begin</div>
+        <div id="answers" class="answers"></div>
+    </div>
+    <button id="startBtn" class="start-btn">Start</button> <!-- Start Button Visible -->
+    <div id="gameOver" class="game-over" style="display: none;">Game Over! Refresh to play again.</div>
+</div>
+
+</section>
+
+ <!-------------------------------------FOOTER-------------------------------------------->
+
+ <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+           <h2>  <i class="fa-regular fa-address-book"></i> Contact Us</h2>
+            <p><b>Location:</b> Governor Pack Road, Baguio City, 2600 Benguet, Philippines</p>
+            <p><b>Number:</b> (074) 442 3316</p>
+        </div>
+        <div class="footer-section">
+            <h2> <i class="fa-regular fa-heart"></i> Social Media</h2>
+            <p><b>Facebook Pages:</b></p>
+            <ul>
+                <li><a href="https://www.facebook.com/UCjaguars" target="_blank">University of the Cordilleras Main</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100095333422873" target="_blank">University of the Cordilleras Integrated School</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100086652038016" target="_blank">University of the Cordilleras STEM Society</a></li>
+                
+                <li><h4>Discord Account:</h4> <a href="https://discord.com/invite/WzKjsMNJTz?fbclid=IwZXh0bgNhZW0CMTEAAR16hWnkV-CPPQCbIBbPKtt9RWL0oVXKhPO3S7PaAE1qZAYDvkvOYpNemH4_aem_YkEnVghO2UHNHANBrTw0vQ" target="_blank">STEM Society Discord</a>
+                </li>
+
+                <li><h4>Instagram: </h4><a href="https://www.instagram.com/katangkay_society/?utm_source=ig_web_button_share_sheet" target="_blank">Katangkay Society</a></li>
+                
+            </ul>
+            
+        </div>
+        <div class="footer-section">
+            <h2><i class="fa-regular fa-envelope"></i> Email Addresses</h2>
+            <ul>
+                <li><a href="email@uc-bcf.edu.ph">University of the Cordilleras Email address</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 University of the Cordilleras Integrated School STEM Society. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+    const quizData = [
+    {
+        question: "Which of the following is NOT a major class of biological molecules?",
+        options: ["Carbohydrates", "Lipids", "Proteins", "Vitamins"],
+        correct: 3
+    },
+    {
+        question: "What is the monomer unit of carbohydrates?",
+        options: ["Amino acids", "Nucleotides", "Monosaccharides", "Fatty acids"],
+        correct: 2
+    },
+    {
+        question: "Which of the following is an example of a disaccharide?",
+        options: ["Glucose", "Sucrose", "Cellulose", "Starch"],
+        correct: 1
+    },
+    {
+        question: "What is the main function of carbohydrates in living organisms?",
+        options: ["Structural support", "Enzyme production", "Energy storage", "Cell membrane formation"],
+        correct: 2
+    },
+    {
+        question: "Which polysaccharide serves as the primary energy storage in animals?",
+        options: ["Cellulose", "Chitin", "Glycogen", "Starch"],
+        correct: 2
+    },
+    {
+        question: "What is the primary function of lipids?",
+        options: ["Store genetic information", "Speed up chemical reactions", "Long-term energy storage", "Provide structural support"],
+        correct: 2
+    },
+    {
+        question: "Which of the following lipids is a major component of the cell membrane?",
+        options: ["Triglycerides", "Steroids", "Phospholipids", "Waxes"],
+        correct: 2
+    },
+    {
+        question: "What type of lipid is known for being hydrophobic and hydrophilic at the same time?",
+        options: ["Triglycerides", "Phospholipids", "Steroids", "Waxes"],
+        correct: 1
+    },
+    {
+        question: "Which type of fat is liquid at room temperature?",
+        options: ["Saturated fats", "Unsaturated fats", "Trans fats", "Waxes"],
+        correct: 1
+    },
+    {
+        question: "What is the monomer unit of proteins?",
+        options: ["Fatty acids", "Monosaccharides", "Amino acids", "Nucleotides"],
+        correct: 2
+    },
+    {
+        question: "Which bond links amino acids together in a protein?",
+        options: ["Ionic bond", "Peptide bond", "Glycosidic bond", "Hydrogen bond"],
+        correct: 1
+    },
+    {
+        question: "Which protein type speeds up chemical reactions?",
+        options: ["Antibodies", "Enzymes", "Hormones", "Structural proteins"],
+        correct: 1
+    },
+    {
+        question: "Which of the following proteins is responsible for oxygen transport in blood?",
+        options: ["Collagen", "Insulin", "Hemoglobin", "Keratin"],
+        correct: 2
+    },
+    {
+        question: "Which protein provides structural support in skin, hair, and nails?",
+        options: ["Hemoglobin", "Keratin", "Myosin", "Insulin"],
+        correct: 1
+    },
+    {
+        question: "Which of the following is NOT a function of proteins?",
+        options: ["Hormone production", "Catalyzing chemical reactions", "Energy storage", "Providing structural support"],
+        correct: 2
+    },
+    {
+        question: "What is the monomer unit of nucleic acids?",
+        options: ["Nucleotides", "Amino acids", "Monosaccharides", "Fatty acids"],
+        correct: 0
+    },
+    {
+        question: "Which nitrogenous base is NOT found in DNA?",
+        options: ["Adenine", "Thymine", "Uracil", "Cytosine"],
+        correct: 2
+    },
+    {
+        question: "What type of nucleic acid carries genetic instructions?",
+        options: ["RNA", "DNA", "ATP", "Enzymes"],
+        correct: 1
+    },
+    {
+        question: "Which sugar is found in RNA?",
+        options: ["Deoxyribose", "Ribose", "Glucose", "Fructose"],
+        correct: 1
+    },
+    {
+        question: "Which nucleic acid is responsible for protein synthesis?",
+        options: ["DNA", "RNA", "ATP", "Glycogen"],
+        correct: 1
+    },
+    {
+        question: "Which of the following nucleotides is an energy carrier in cells?",
+        options: ["DNA", "RNA", "ATP", "GTP"],
+        correct: 2
+    },
+    {
+        question: "What type of reaction links monomers to form polymers?",
+        options: ["Hydrolysis", "Dehydration synthesis", "Oxidation", "Reduction"],
+        correct: 1
+    },
+    {
+        question: "What happens during hydrolysis?",
+        options: ["Water is added to break down polymers", "Polymers are built by removing water", "Proteins are formed", "ATP is generated"],
+        correct: 0
+    },
+    {
+        question: "Which polysaccharide forms the exoskeleton of insects and crustaceans?",
+        options: ["Starch", "Chitin", "Cellulose", "Glycogen"],
+        correct: 1
+    },
+    {
+        question: "Which polysaccharide makes up plant cell walls?",
+        options: ["Cellulose", "Chitin", "Glycogen", "Starch"],
+        correct: 0
+    },
+    {
+        question: "Which macromolecule serves as the primary source of quick energy?",
+        options: ["Proteins", "Lipids", "Carbohydrates", "Nucleic acids"],
+        correct: 2
+    },
+    {
+        question: "Which biomolecule contains genetic instructions?",
+        options: ["Carbohydrates", "Lipids", "Proteins", "Nucleic acids"],
+        correct: 3
+    },
+    {
+        question: "Which biomolecule is primarily responsible for cell recognition and binding?",
+        options: ["Proteins", "Lipids", "Carbohydrates", "Nucleic acids"],
+        correct: 2
+    },
+    {
+        question: "What are oligosaccharides commonly associated with?",
+        options: ["Energy storage", "Cell membrane recognition", "Enzyme activity", "Hormone production"],
+        correct: 1
+    }
+];
+
+
+ 
+ const livesEl = document.getElementById('lives');
+ const timerEl = document.getElementById('timer');
+ const questionEl = document.getElementById('question');
+ const answersEl = document.getElementById('answers');
+ const startBtn = document.getElementById('startBtn');
+ const gameOverEl = document.getElementById('gameOver');
+ const refreshBtn = document.createElement('button'); // Create refresh button
+ const quizEl = document.getElementById('quiz');
+ 
+ let currentQuestion = 0;
+ let lives = 3;
+ let timer;
+ let timeLeft = 10;
+ let score = 0; // Initialize player score
+ 
+ // Function to shuffle questions array
+ function shuffleQuestions() {
+     for (let i = quizData.length - 1; i > 0; i--) {
+         const j = Math.floor(Math.random() * (i + 1));
+         [quizData[i], quizData[j]] = [quizData[j], quizData[i]]; // Swap elements
+     }
+ }
+ 
+ function loadQuestion() {
+     if (currentQuestion >= quizData.length) {
+         endGame();
+         return;
+     }
+ 
+     // Show quiz container
+     quizEl.style.display = 'block';
+ 
+     // Load current question
+     const q = quizData[currentQuestion];
+     questionEl.textContent = q.question;
+     answersEl.innerHTML = '';
+     q.options.forEach((option, index) => {
+         const btn = document.createElement('button');
+         btn.textContent = option;
+         btn.className = 'answer';
+         btn.addEventListener('click', () => handleAnswer(index));
+         answersEl.appendChild(btn);
+     });
+ 
+     resetTimer();
+ }
+ 
+ function handleAnswer(selected) {
+     const q = quizData[currentQuestion];
+     if (selected === q.correct) {
+         score++; // Increment score for correct answers
+         currentQuestion++;
+         loadQuestion();
+     } else {
+         lives--;
+         updateLives();
+         if (lives === 0) {
+             endGame();
+         }
+     }
+ }
+ 
+ function updateLives() {
+     livesEl.textContent = `Lives: ${lives}`;
+ }
+ 
+ function resetTimer() {
+     clearInterval(timer);
+     timeLeft = 10;
+     timerEl.textContent = `Time: ${timeLeft}`;
+     timer = setInterval(() => {
+         timeLeft--;
+         timerEl.textContent = `Time: ${timeLeft}`;
+         if (timeLeft === 0) {
+             lives--;
+             updateLives();
+             if (lives === 0) {
+                 endGame();
+             } else {
+                 currentQuestion++;
+                 loadQuestion();
+             }
+         }
+     }, 1000);
+ }
+ 
+ function endGame() {
+     clearInterval(timer);
+ 
+     // Hide game elements
+     questionEl.style.display = 'none';
+     answersEl.style.display = 'none';
+     livesEl.style.display = 'none';
+     timerEl.style.display = 'none';
+ 
+     // Display game over message and score
+     gameOverEl.style.display = 'block';
+     gameOverEl.textContent = `Your score is ${score}.`;
+ 
+     // Show refresh button
+     refreshBtn.textContent = "Play Again";
+     refreshBtn.className = 'start-btn';
+     refreshBtn.style.marginTop = '20px';
+     gameOverEl.appendChild(refreshBtn);
+ 
+     // Refresh the page when button is clicked
+     refreshBtn.addEventListener('click', () => {
+         location.reload();
+     });
+ }
+ 
+ // Start Button Click
+ startBtn.addEventListener('click', () => {
+     shuffleQuestions(); // Shuffle questions at the start
+     startBtn.style.display = 'none';
+     loadQuestion();
+ });
+ </script>
+ 
+
+</body>
+</html>

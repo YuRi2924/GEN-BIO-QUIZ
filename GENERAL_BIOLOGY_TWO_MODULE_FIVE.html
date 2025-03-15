@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="QUIZ_BEE_TEMPLATE_ORIGINAL .css">
+    <link rel="icon" href="LOGO_THREE_STEM_SOCIETY.png">
+    <title>UC STEM SOCIETY</title>
+</head>
+<body>
+
+<section class="SECTION_ONE">  
+
+<div class="SECTION_ONE_INTRODUCTORY">
+<h1>
+    Module 5: Reproduction and Development
+
+</h1>
+
+<P>
+    INSTRUCTION: Select the correct answer for each question. You have 3 lives to complete the quiz. If you choose the wrong answer or run out of time, you will lose a life. Once all your lives are gone, the quiz will end. Good luck!
+</P>
+
+<a href="STEM_SOC_GEN_BIO.HTML">GO BACK</a>
+</div>
+
+<div class="quiz-container">
+    <div id="quiz" style="display: none;"> <!-- Hidden initially -->
+        <div id="lives" class="lives">Lives: 3</div>
+        <div id="timer" class="timer">Time: 10</div>
+        <div id="question" class="question">Press Start to Begin</div>
+        <div id="answers" class="answers"></div>
+    </div>
+    <button id="startBtn" class="start-btn">Start</button> <!-- Start Button Visible -->
+    <div id="gameOver" class="game-over" style="display: none;">Game Over! Refresh to play again.</div>
+</div>
+
+</section>
+
+ <!-------------------------------------FOOTER-------------------------------------------->
+
+ <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+           <h2>  <i class="fa-regular fa-address-book"></i> Contact Us</h2>
+            <p><b>Location:</b> Governor Pack Road, Baguio City, 2600 Benguet, Philippines</p>
+            <p><b>Number:</b> (074) 442 3316</p>
+        </div>
+        <div class="footer-section">
+            <h2> <i class="fa-regular fa-heart"></i> Social Media</h2>
+            <p><b>Facebook Pages:</b></p>
+            <ul>
+                <li><a href="https://www.facebook.com/UCjaguars" target="_blank">University of the Cordilleras Main</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100095333422873" target="_blank">University of the Cordilleras Integrated School</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100086652038016" target="_blank">University of the Cordilleras STEM Society</a></li>
+                
+                <li><h4>Discord Account:</h4> <a href="https://discord.com/invite/WzKjsMNJTz?fbclid=IwZXh0bgNhZW0CMTEAAR16hWnkV-CPPQCbIBbPKtt9RWL0oVXKhPO3S7PaAE1qZAYDvkvOYpNemH4_aem_YkEnVghO2UHNHANBrTw0vQ" target="_blank">STEM Society Discord</a>
+                </li>
+
+                <li><h4>Instagram: </h4><a href="https://www.instagram.com/katangkay_society/?utm_source=ig_web_button_share_sheet" target="_blank">Katangkay Society</a></li>
+                
+            </ul>
+            
+        </div>
+        <div class="footer-section">
+            <h2><i class="fa-regular fa-envelope"></i> Email Addresses</h2>
+            <ul>
+                <li><a href="email@uc-bcf.edu.ph">University of the Cordilleras Email address</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 University of the Cordilleras Integrated School STEM Society. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+    const quizData = [
+    {
+        question: "What is the process by which new individuals of a species are produced?",
+        options: [
+            "Photosynthesis",
+            "Respiration",
+            "Reproduction",
+            "Excretion"
+        ],
+        correct: 2
+    },
+    {
+        question: "Which type of reproduction produces genetically identical offspring from one parent?",
+        options: [
+            "Sexual reproduction",
+            "Asexual reproduction",
+            "Cross-pollination",
+            "Binary fission"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which of the following is an example of asexual reproduction?",
+        options: [
+            "Budding",
+            "Fertilization",
+            "Pollination",
+            "Gamete fusion"
+        ],
+        correct: 0
+    },
+    {
+        question: "In which type of reproduction do offspring inherit genes from both parents?",
+        options: [
+            "Asexual reproduction",
+            "Binary fission",
+            "Sexual reproduction",
+            "Cloning"
+        ],
+        correct: 2
+    },
+    {
+        question: "Which type of asexual reproduction involves the separation of the body into two new bodies?",
+        options: [
+            "Budding",
+            "Binary fission",
+            "Fragmentation",
+            "Sporulation"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which form of reproduction involves a new individual growing from an anatomical point of the parent?",
+        options: [
+            "Binary fission",
+            "Budding",
+            "Cloning",
+            "Pollination"
+        ],
+        correct: 1
+    },
+    {
+        question: "What is the process where an organism breaks into fragments, and each fragment develops into a new individual?",
+        options: [
+            "Budding",
+            "Fragmentation",
+            "Parthenogenesis",
+            "Cloning"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which type of reproduction occurs without fertilization and leads to embryo development?",
+        options: [
+            "Parthenogenesis",
+            "Pollination",
+            "Sporulation",
+            "Cross-pollination"
+        ],
+        correct: 0
+    },
+    {
+        question: "Which part of a flower produces pollen grains?",
+        options: [
+            "Sepals",
+            "Carpel",
+            "Stigma",
+            "Anther"
+        ],
+        correct: 3
+    },
+    {
+        question: "What is the female reproductive part of a flower called?",
+        options: [
+            "Petal",
+            "Carpel",
+            "Stamen",
+            "Anther"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which method of reproduction combines favorable stem and root characteristics through grafting?",
+        options: [
+            "Layering",
+            "Cutting",
+            "Grafting",
+            "Budding"
+        ],
+        correct: 2
+    },
+    {
+        question: "Which type of vegetative reproduction occurs naturally in plants?",
+        options: [
+            "Artificial propagation",
+            "Seed formation",
+            "Natural vegetative reproduction",
+            "Cloning"
+        ],
+        correct: 2
+    },
+    {
+        question: "Which structure is responsible for receiving pollen grains in a flower?",
+        options: [
+            "Anther",
+            "Filament",
+            "Ovary",
+            "Stigma"
+        ],
+        correct: 3
+    },
+    {
+        question: "What is the purpose of the bright colors in insect-pollinated flowers?",
+        options: [
+            "To repel predators",
+            "To attract insects for pollination",
+            "To store water",
+            "To absorb more sunlight"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which part of a flower turns into a fruit after fertilization?",
+        options: [
+            "Petals",
+            "Anther",
+            "Ovary",
+            "Stigma"
+        ],
+        correct: 2
+    },
+    {
+        question: "What is the key difference between self-pollination and cross-pollination?",
+        options: [
+            "Self-pollination requires two plants",
+            "Cross-pollination occurs within the same flower",
+            "Cross-pollination transfers pollen between different plants",
+            "Self-pollination produces genetically diverse offspring"
+        ],
+        correct: 2
+    },
+    {
+        question: "Which type of reproduction ensures genetic variation?",
+        options: [
+            "Asexual reproduction",
+            "Sexual reproduction",
+            "Budding",
+            "Cloning"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which type of pollination increases genetic diversity?",
+        options: [
+            "Self-pollination",
+            "Cross-pollination",
+            "Vegetative reproduction",
+            "Artificial propagation"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which plant reproduction method involves the growth of a new plant from a portion of the parent?",
+        options: [
+            "Pollination",
+            "Fragmentation",
+            "Vegetative reproduction",
+            "Parthenogenesis"
+        ],
+        correct: 2
+    },
+    {
+        question: "Which part of the female reproductive system is responsible for producing eggs?",
+        options: [
+            "Uterus",
+            "Ovaries",
+            "Fallopian tubes",
+            "Cervix"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which phase of the female reproductive cycle involves the release of an egg?",
+        options: [
+            "Menstrual phase",
+            "Follicular phase",
+            "Ovulation phase",
+            "Luteal phase"
+        ],
+        correct: 2
+    },
+    {
+        question: "What is the function of the corpus luteum in the female reproductive system?",
+        options: [
+            "To release the egg",
+            "To produce progesterone",
+            "To transport sperm",
+            "To initiate fertilization"
+        ],
+        correct: 1
+    },
+    {
+        question: "What is the role of progesterone in the female reproductive system?",
+        options: [
+            "To trigger ovulation",
+            "To maintain the uterine lining",
+            "To fertilize the egg",
+            "To develop sperm cells"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which hormone triggers ovulation?",
+        options: [
+            "Estrogen",
+            "Progesterone",
+            "Luteinizing hormone (LH)",
+            "Follicle-stimulating hormone (FSH)"
+        ],
+        correct: 2
+    },
+    {
+        question: "Which reproductive structure carries sperm from the testes to the urethra?",
+        options: [
+            "Vas deferens",
+            "Epididymis",
+            "Prostate gland",
+            "Seminal vesicle"
+        ],
+        correct: 0
+    },
+    {
+        question: "What is the primary site of fertilization in the female reproductive system?",
+        options: [
+            "Ovary",
+            "Uterus",
+            "Fallopian tube",
+            "Cervix"
+        ],
+        correct: 2
+    },
+    {
+        question: "Which of the following occurs when a fertilized egg implants in the uterus?",
+        options: [
+            "Ovulation",
+            "Menstruation",
+            "Pregnancy",
+            "Fertilization"
+        ],
+        correct: 2
+    },
+    {
+        question: "Which structure provides nourishment to a developing fetus?",
+        options: [
+            "Ovaries",
+            "Fallopian tubes",
+            "Placenta",
+            "Cervix"
+        ],
+        correct: 2
+    },
+    {
+        question: "Which reproductive method is most common in flowering plants?",
+        options: [
+            "Parthenogenesis",
+            "Asexual reproduction",
+            "Sexual reproduction",
+            "Cloning"
+        ],
+        correct: 2
+    }
+];
+
+
+ 
+ const livesEl = document.getElementById('lives');
+ const timerEl = document.getElementById('timer');
+ const questionEl = document.getElementById('question');
+ const answersEl = document.getElementById('answers');
+ const startBtn = document.getElementById('startBtn');
+ const gameOverEl = document.getElementById('gameOver');
+ const refreshBtn = document.createElement('button'); // Create refresh button
+ const quizEl = document.getElementById('quiz');
+ 
+ let currentQuestion = 0;
+ let lives = 3;
+ let timer;
+ let timeLeft = 10;
+ let score = 0; // Initialize player score
+ 
+ // Function to shuffle questions array
+ function shuffleQuestions() {
+     for (let i = quizData.length - 1; i > 0; i--) {
+         const j = Math.floor(Math.random() * (i + 1));
+         [quizData[i], quizData[j]] = [quizData[j], quizData[i]]; // Swap elements
+     }
+ }
+ 
+ function loadQuestion() {
+     if (currentQuestion >= quizData.length) {
+         endGame();
+         return;
+     }
+ 
+     // Show quiz container
+     quizEl.style.display = 'block';
+ 
+     // Load current question
+     const q = quizData[currentQuestion];
+     questionEl.textContent = q.question;
+     answersEl.innerHTML = '';
+     q.options.forEach((option, index) => {
+         const btn = document.createElement('button');
+         btn.textContent = option;
+         btn.className = 'answer';
+         btn.addEventListener('click', () => handleAnswer(index));
+         answersEl.appendChild(btn);
+     });
+ 
+     resetTimer();
+ }
+ 
+ function handleAnswer(selected) {
+     const q = quizData[currentQuestion];
+     if (selected === q.correct) {
+         score++; // Increment score for correct answers
+         currentQuestion++;
+         loadQuestion();
+     } else {
+         lives--;
+         updateLives();
+         if (lives === 0) {
+             endGame();
+         }
+     }
+ }
+ 
+ function updateLives() {
+     livesEl.textContent = `Lives: ${lives}`;
+ }
+ 
+ function resetTimer() {
+     clearInterval(timer);
+     timeLeft = 10;
+     timerEl.textContent = `Time: ${timeLeft}`;
+     timer = setInterval(() => {
+         timeLeft--;
+         timerEl.textContent = `Time: ${timeLeft}`;
+         if (timeLeft === 0) {
+             lives--;
+             updateLives();
+             if (lives === 0) {
+                 endGame();
+             } else {
+                 currentQuestion++;
+                 loadQuestion();
+             }
+         }
+     }, 1000);
+ }
+ 
+ function endGame() {
+     clearInterval(timer);
+ 
+     // Hide game elements
+     questionEl.style.display = 'none';
+     answersEl.style.display = 'none';
+     livesEl.style.display = 'none';
+     timerEl.style.display = 'none';
+ 
+     // Display game over message and score
+     gameOverEl.style.display = 'block';
+     gameOverEl.textContent = `Your score is ${score}.`;
+ 
+     // Show refresh button
+     refreshBtn.textContent = "Play Again";
+     refreshBtn.className = 'start-btn';
+     refreshBtn.style.marginTop = '20px';
+     gameOverEl.appendChild(refreshBtn);
+ 
+     // Refresh the page when button is clicked
+     refreshBtn.addEventListener('click', () => {
+         location.reload();
+     });
+ }
+ 
+ // Start Button Click
+ startBtn.addEventListener('click', () => {
+     shuffleQuestions(); // Shuffle questions at the start
+     startBtn.style.display = 'none';
+     loadQuestion();
+ });
+ </script>
+ 
+
+</body>
+</html>

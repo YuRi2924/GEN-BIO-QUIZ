@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="QUIZ_BEE_TEMPLATE_ORIGINAL .css">
+    <link rel="icon" href="LOGO_THREE_STEM_SOCIETY.png">
+    <title>UC STEM SOCIETY</title>
+</head>
+<body>
+
+<section class="SECTION_ONE">  
+
+<div class="SECTION_ONE_INTRODUCTORY">
+<h1>
+    MODULE 6: NUTRITION
+</h1>
+
+<P>
+    INSTRUCTION: Select the correct answer for each question. You have 3 lives to complete the quiz. If you choose the wrong answer or run out of time, you will lose a life. Once all your lives are gone, the quiz will end. Good luck!
+</P>
+
+<a href="STEM_SOC_GEN_BIO.HTML">GO BACK</a>
+</div>
+
+<div class="quiz-container">
+    <div id="quiz" style="display: none;"> <!-- Hidden initially -->
+        <div id="lives" class="lives">Lives: 3</div>
+        <div id="timer" class="timer">Time: 10</div>
+        <div id="question" class="question">Press Start to Begin</div>
+        <div id="answers" class="answers"></div>
+    </div>
+    <button id="startBtn" class="start-btn">Start</button> <!-- Start Button Visible -->
+    <div id="gameOver" class="game-over" style="display: none;">Game Over! Refresh to play again.</div>
+</div>
+
+</section>
+
+ <!-------------------------------------FOOTER-------------------------------------------->
+
+ <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+           <h2>  <i class="fa-regular fa-address-book"></i> Contact Us</h2>
+            <p><b>Location:</b> Governor Pack Road, Baguio City, 2600 Benguet, Philippines</p>
+            <p><b>Number:</b> (074) 442 3316</p>
+        </div>
+        <div class="footer-section">
+            <h2> <i class="fa-regular fa-heart"></i> Social Media</h2>
+            <p><b>Facebook Pages:</b></p>
+            <ul>
+                <li><a href="https://www.facebook.com/UCjaguars" target="_blank">University of the Cordilleras Main</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100095333422873" target="_blank">University of the Cordilleras Integrated School</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100086652038016" target="_blank">University of the Cordilleras STEM Society</a></li>
+                
+                <li><h4>Discord Account:</h4> <a href="https://discord.com/invite/WzKjsMNJTz?fbclid=IwZXh0bgNhZW0CMTEAAR16hWnkV-CPPQCbIBbPKtt9RWL0oVXKhPO3S7PaAE1qZAYDvkvOYpNemH4_aem_YkEnVghO2UHNHANBrTw0vQ" target="_blank">STEM Society Discord</a>
+                </li>
+
+                <li><h4>Instagram: </h4><a href="https://www.instagram.com/katangkay_society/?utm_source=ig_web_button_share_sheet" target="_blank">Katangkay Society</a></li>
+                
+            </ul>
+            
+        </div>
+        <div class="footer-section">
+            <h2><i class="fa-regular fa-envelope"></i> Email Addresses</h2>
+            <ul>
+                <li><a href="email@uc-bcf.edu.ph">University of the Cordilleras Email address</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 University of the Cordilleras Integrated School STEM Society. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+  const quizData = [
+    {
+        question: "What is nutrition?",
+        options: [
+            "The process of eliminating waste",
+            "The process by which organisms obtain and use nutrients",
+            "The process of breaking down food particles",
+            "The movement of nutrients in the blood"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which type of nutrition involves the synthesis of organic materials from inorganic raw materials?",
+        options: [
+            "Heterotrophic nutrition",
+            "Saprotrophic nutrition",
+            "Autotrophic nutrition",
+            "Parasitic nutrition"
+        ],
+        correct: 2
+    },
+    {
+        question: "Which organisms can carry out chemosynthesis?",
+        options: [
+            "Plants",
+            "Fungi",
+            "Chemoautotrophic bacteria",
+            "Herbivores"
+        ],
+        correct: 2
+    },
+    {
+        question: "Which type of autotrophic nutrition uses light energy to synthesize organic compounds?",
+        options: [
+            "Chemosynthesis",
+            "Photosynthesis",
+            "Heterotrophic nutrition",
+            "Saprophytic nutrition"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which gas is required for photosynthesis?",
+        options: [
+            "Oxygen",
+            "Nitrogen",
+            "Carbon dioxide",
+            "Methane"
+        ],
+        correct: 2
+    },
+    {
+        question: "Which organisms rely on obtaining organic materials from other sources because they cannot synthesize them?",
+        options: [
+            "Autotrophs",
+            "Heterotrophs",
+            "Chemoautotrophs",
+            "Photoautotrophs"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which type of heterotrophic nutrition involves feeding on dead and decaying organic matter?",
+        options: [
+            "Parasitic nutrition",
+            "Holozoic nutrition",
+            "Saprotrophic nutrition",
+            "Autotrophic nutrition"
+        ],
+        correct: 2
+    },
+    {
+        question: "What is an example of a saprophytic organism?",
+        options: [
+            "Cow",
+            "Mushroom",
+            "Human",
+            "Mosquito"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which type of nutrition involves living on another organism and obtaining food from it?",
+        options: [
+            "Holozoic nutrition",
+            "Parasitic nutrition",
+            "Saprotrophic nutrition",
+            "Autotrophic nutrition"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which is an example of an endoparasite?",
+        options: [
+            "Tick",
+            "Lice",
+            "Tapeworm",
+            "Flea"
+        ],
+        correct: 2
+    },
+    {
+        question: "Which type of parasitic organism lives outside the host’s body?",
+        options: [
+            "Endoparasite",
+            "Exoparasite",
+            "Obligate parasite",
+            "Facultative parasite"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which type of nutrition involves the ingestion and digestion of food inside the body?",
+        options: [
+            "Parasitic nutrition",
+            "Holozoic nutrition",
+            "Autotrophic nutrition",
+            "Saprotrophic nutrition"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which of the following is an example of a herbivore?",
+        options: [
+            "Tiger",
+            "Rabbit",
+            "Snake",
+            "Spider"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which category of holozoic organisms feeds on both plants and animals?",
+        options: [
+            "Herbivores",
+            "Carnivores",
+            "Omnivores",
+            "Detritivores"
+        ],
+        correct: 2
+    },
+    {
+        question: "Which digestive process involves breaking food into smaller particles without chemical change?",
+        options: [
+            "Absorption",
+            "Mechanical digestion",
+            "Chemical digestion",
+            "Assimilation"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which digestive process involves breaking food down into simpler molecules using enzymes?",
+        options: [
+            "Mechanical digestion",
+            "Chemical digestion",
+            "Ingestion",
+            "Egestion"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which enzyme breaks down carbohydrates into simple sugars?",
+        options: [
+            "Lipase",
+            "Protease",
+            "Amylase",
+            "Pepsin"
+        ],
+        correct: 2
+    },
+    {
+        question: "Which enzyme breaks down proteins into amino acids?",
+        options: [
+            "Lipase",
+            "Pepsin",
+            "Amylase",
+            "Maltase"
+        ],
+        correct: 1
+    },
+    {
+        question: "Which enzyme breaks down fats into glycerol and fatty acids?",
+        options: [
+            "Amylase",
+            "Protease",
+            "Lipase",
+            "Maltase"
+        ],
+        correct: 2
+    },
+    {
+        question: "Which organ is responsible for absorbing the majority of nutrients?",
+        options: [
+            "Stomach",
+            "Small intestine",
+            "Large intestine",
+            "Esophagus"
+        ],
+        correct: 1
+    },
+    {
+        question: "What structures in the small intestine increase surface area for absorption?",
+        options: [
+            "Villi",
+            "Alveoli",
+            "Cilia",
+            "Trachea"
+        ],
+        correct: 0
+    },
+    {
+        question: "Which of the following substances can be absorbed directly through the stomach lining?",
+        options: [
+            "Carbohydrates",
+            "Proteins",
+            "Water and alcohol",
+            "Lipids"
+        ],
+        correct: 2
+    },
+    {
+        question: "What is the process of converting absorbed nutrients into useful molecules for the body?",
+        options: [
+            "Egestion",
+            "Assimilation",
+            "Digestion",
+            "Excretion"
+        ],
+        correct: 1
+    },
+    {
+        question: "Where are excess amino acids converted into urea?",
+        options: [
+            "Stomach",
+            "Liver",
+            "Kidneys",
+            "Pancreas"
+        ],
+        correct: 1
+    },
+    {
+        question: "Where are excess sugars stored as glycogen?",
+        options: [
+            "Liver",
+            "Lungs",
+            "Heart",
+            "Brain"
+        ],
+        correct: 0
+    },
+    {
+        question: "Which part of the digestive system is responsible for water absorption?",
+        options: [
+            "Esophagus",
+            "Stomach",
+            "Large intestine",
+            "Pancreas"
+        ],
+        correct: 2
+    },
+    {
+        question: "Which process removes undigested food from the body?",
+        options: [
+            "Absorption",
+            "Egestion",
+            "Assimilation",
+            "Respiration"
+        ],
+        correct: 1
+    },
+    {
+        question: "What is the final stage of digestion in humans?",
+        options: [
+            "Egestion",
+            "Assimilation",
+            "Absorption",
+            "Ingestion"
+        ],
+        correct: 0
+    },
+    {
+        question: "Which of the following nutrients provides the most energy per gram?",
+        options: [
+            "Carbohydrates",
+            "Proteins",
+            "Fats",
+            "Vitamins"
+        ],
+        correct: 2
+    }
+];
+
+
+ 
+ const livesEl = document.getElementById('lives');
+ const timerEl = document.getElementById('timer');
+ const questionEl = document.getElementById('question');
+ const answersEl = document.getElementById('answers');
+ const startBtn = document.getElementById('startBtn');
+ const gameOverEl = document.getElementById('gameOver');
+ const refreshBtn = document.createElement('button'); // Create refresh button
+ const quizEl = document.getElementById('quiz');
+ 
+ let currentQuestion = 0;
+ let lives = 3;
+ let timer;
+ let timeLeft = 10;
+ let score = 0; // Initialize player score
+ 
+ // Function to shuffle questions array
+ function shuffleQuestions() {
+     for (let i = quizData.length - 1; i > 0; i--) {
+         const j = Math.floor(Math.random() * (i + 1));
+         [quizData[i], quizData[j]] = [quizData[j], quizData[i]]; // Swap elements
+     }
+ }
+ 
+ function loadQuestion() {
+     if (currentQuestion >= quizData.length) {
+         endGame();
+         return;
+     }
+ 
+     // Show quiz container
+     quizEl.style.display = 'block';
+ 
+     // Load current question
+     const q = quizData[currentQuestion];
+     questionEl.textContent = q.question;
+     answersEl.innerHTML = '';
+     q.options.forEach((option, index) => {
+         const btn = document.createElement('button');
+         btn.textContent = option;
+         btn.className = 'answer';
+         btn.addEventListener('click', () => handleAnswer(index));
+         answersEl.appendChild(btn);
+     });
+ 
+     resetTimer();
+ }
+ 
+ function handleAnswer(selected) {
+     const q = quizData[currentQuestion];
+     if (selected === q.correct) {
+         score++; // Increment score for correct answers
+         currentQuestion++;
+         loadQuestion();
+     } else {
+         lives--;
+         updateLives();
+         if (lives === 0) {
+             endGame();
+         }
+     }
+ }
+ 
+ function updateLives() {
+     livesEl.textContent = `Lives: ${lives}`;
+ }
+ 
+ function resetTimer() {
+     clearInterval(timer);
+     timeLeft = 10;
+     timerEl.textContent = `Time: ${timeLeft}`;
+     timer = setInterval(() => {
+         timeLeft--;
+         timerEl.textContent = `Time: ${timeLeft}`;
+         if (timeLeft === 0) {
+             lives--;
+             updateLives();
+             if (lives === 0) {
+                 endGame();
+             } else {
+                 currentQuestion++;
+                 loadQuestion();
+             }
+         }
+     }, 1000);
+ }
+ 
+ function endGame() {
+     clearInterval(timer);
+ 
+     // Hide game elements
+     questionEl.style.display = 'none';
+     answersEl.style.display = 'none';
+     livesEl.style.display = 'none';
+     timerEl.style.display = 'none';
+ 
+     // Display game over message and score
+     gameOverEl.style.display = 'block';
+     gameOverEl.textContent = `Your score is ${score}.`;
+ 
+     // Show refresh button
+     refreshBtn.textContent = "Play Again";
+     refreshBtn.className = 'start-btn';
+     refreshBtn.style.marginTop = '20px';
+     gameOverEl.appendChild(refreshBtn);
+ 
+     // Refresh the page when button is clicked
+     refreshBtn.addEventListener('click', () => {
+         location.reload();
+     });
+ }
+ 
+ // Start Button Click
+ startBtn.addEventListener('click', () => {
+     shuffleQuestions(); // Shuffle questions at the start
+     startBtn.style.display = 'none';
+     loadQuestion();
+ });
+ </script>
+ 
+
+</body>
+</html>

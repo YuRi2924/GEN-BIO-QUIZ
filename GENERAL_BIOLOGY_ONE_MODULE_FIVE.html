@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="QUIZ_BEE_TEMPLATE_ORIGINAL .css">
+    <link rel="icon" href="LOGO_THREE_STEM_SOCIETY.png">
+    <title>UC STEM SOCIETY</title>
+</head>
+<body>
+
+<section class="SECTION_ONE">  
+
+<div class="SECTION_ONE_INTRODUCTORY">
+<h1>
+    MODULE 5: CELL TRANSPORT MECHANISM
+
+</h1>
+
+<P>
+    INSTRUCTION: Select the correct answer for each question. You have 3 lives to complete the quiz. If you choose the wrong answer or run out of time, you will lose a life. Once all your lives are gone, the quiz will end. Good luck!
+</P>
+
+<a href="STEM_SOC_GEN_BIO.HTML">GO BACK</a>
+</div>
+
+<div class="quiz-container">
+    <div id="quiz" style="display: none;"> <!-- Hidden initially -->
+        <div id="lives" class="lives">Lives: 3</div>
+        <div id="timer" class="timer">Time: 10</div>
+        <div id="question" class="question">Press Start to Begin</div>
+        <div id="answers" class="answers"></div>
+    </div>
+    <button id="startBtn" class="start-btn">Start</button> <!-- Start Button Visible -->
+    <div id="gameOver" class="game-over" style="display: none;">Game Over! Refresh to play again.</div>
+</div>
+
+</section>
+
+ <!-------------------------------------FOOTER-------------------------------------------->
+
+ <footer class="footer">
+    <div class="footer-container">
+        <div class="footer-section">
+           <h2>  <i class="fa-regular fa-address-book"></i> Contact Us</h2>
+            <p><b>Location:</b> Governor Pack Road, Baguio City, 2600 Benguet, Philippines</p>
+            <p><b>Number:</b> (074) 442 3316</p>
+        </div>
+        <div class="footer-section">
+            <h2> <i class="fa-regular fa-heart"></i> Social Media</h2>
+            <p><b>Facebook Pages:</b></p>
+            <ul>
+                <li><a href="https://www.facebook.com/UCjaguars" target="_blank">University of the Cordilleras Main</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100095333422873" target="_blank">University of the Cordilleras Integrated School</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=100086652038016" target="_blank">University of the Cordilleras STEM Society</a></li>
+                
+                <li><h4>Discord Account:</h4> <a href="https://discord.com/invite/WzKjsMNJTz?fbclid=IwZXh0bgNhZW0CMTEAAR16hWnkV-CPPQCbIBbPKtt9RWL0oVXKhPO3S7PaAE1qZAYDvkvOYpNemH4_aem_YkEnVghO2UHNHANBrTw0vQ" target="_blank">STEM Society Discord</a>
+                </li>
+
+                <li><h4>Instagram: </h4><a href="https://www.instagram.com/katangkay_society/?utm_source=ig_web_button_share_sheet" target="_blank">Katangkay Society</a></li>
+                
+            </ul>
+            
+        </div>
+        <div class="footer-section">
+            <h2><i class="fa-regular fa-envelope"></i> Email Addresses</h2>
+            <ul>
+                <li><a href="email@uc-bcf.edu.ph">University of the Cordilleras Email address</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 University of the Cordilleras Integrated School STEM Society. All Rights Reserved.</p>
+    </div>
+</footer>
+
+<script>
+    const quizData = [
+    {
+        question: "What is the primary function of the cell membrane?",
+        options: ["Energy production", "Protein synthesis", "Regulating the flow of materials in and out of the cell", "Breaking down waste"],
+        correct: 2
+    },
+    {
+        question: "Which model best describes the structure of the cell membrane?",
+        options: ["Lock and Key Model", "Fluid Mosaic Model", "Solid-State Model", "DNA Replication Model"],
+        correct: 1
+    },
+    {
+        question: "What type of molecules make up the lipid bilayer of the cell membrane?",
+        options: ["Proteins and carbohydrates", "Phospholipids, cholesterol, and glycolipids", "Nucleic acids and proteins", "Lipids and DNA"],
+        correct: 1
+    },
+    {
+        question: "Which part of the phospholipid is hydrophilic?",
+        options: ["Fatty acid tails", "Cholesterol", "Phosphate head", "Lipid core"],
+        correct: 2
+    },
+    {
+        question: "Which part of the phospholipid is hydrophobic?",
+        options: ["Phosphate head", "Glycolipid", "Fatty acid tails", "Cholesterol"],
+        correct: 2
+    },
+    {
+        question: "Which type of transport requires no energy?",
+        options: ["Active transport", "Facilitated diffusion", "Osmosis", "Endocytosis"],
+        correct: 2
+    },
+    {
+        question: "What is simple diffusion?",
+        options: ["The movement of water across a membrane", "The movement of molecules from low to high concentration", "The movement of molecules from high to low concentration without assistance", "The movement of molecules using ATP"],
+        correct: 2
+    },
+    {
+        question: "What type of molecules can pass freely through the cell membrane by simple diffusion?",
+        options: ["Large proteins", "Hydrophobic molecules and gases", "Glucose and amino acids", "DNA and RNA"],
+        correct: 1
+    },
+    {
+        question: "Which type of transport uses membrane proteins to help molecules cross the membrane?",
+        options: ["Osmosis", "Facilitated diffusion", "Simple diffusion", "Endocytosis"],
+        correct: 1
+    },
+    {
+        question: "What is osmosis?",
+        options: ["The diffusion of oxygen through a membrane", "The movement of water across a selectively permeable membrane", "The active transport of molecules", "The formation of vesicles"],
+        correct: 1
+    },
+    {
+        question: "A solution with a higher solute concentration outside the cell is called:",
+        options: ["Isotonic", "Hypertonic", "Hypotonic", "Neutral"],
+        correct: 1
+    },
+    {
+        question: "What happens to a cell placed in a hypertonic solution?",
+        options: ["It swells", "It remains the same", "It shrinks", "It absorbs solutes"],
+        correct: 2
+    },
+    {
+        question: "What happens to a cell placed in a hypotonic solution?",
+        options: ["It shrinks", "It remains the same", "It bursts or swells", "It undergoes mitosis"],
+        correct: 2
+    },
+    {
+        question: "Which type of transport moves molecules against their concentration gradient?",
+        options: ["Simple diffusion", "Osmosis", "Facilitated diffusion", "Active transport"],
+        correct: 3
+    },
+    {
+        question: "Which transport mechanism requires ATP?",
+        options: ["Osmosis", "Facilitated diffusion", "Active transport", "Simple diffusion"],
+        correct: 2
+    },
+    {
+        question: "What is the role of carrier proteins in facilitated diffusion?",
+        options: ["They break down molecules", "They move molecules against their concentration gradient", "They assist in the movement of molecules across the membrane without using energy", "They produce ATP"],
+        correct: 2
+    },
+    {
+        question: "Which organelle helps the cell remove excess water through active transport?",
+        options: ["Mitochondria", "Contractile vacuole", "Nucleus", "Golgi apparatus"],
+        correct: 1
+    },
+    {
+        question: "Which transport mechanism is used by the Sodium-Potassium Pump?",
+        options: ["Simple diffusion", "Osmosis", "Facilitated diffusion", "Active transport"],
+        correct: 3
+    },
+    {
+        question: "In the Sodium-Potassium Pump, how many sodium ions are pumped out of the cell for every two potassium ions pumped in?",
+        options: ["One", "Two", "Three", "Four"],
+        correct: 2
+    },
+    {
+        question: "Which process allows a cell to take in large molecules by engulfing them in a vesicle?",
+        options: ["Osmosis", "Exocytosis", "Endocytosis", "Facilitated diffusion"],
+        correct: 2
+    },
+    {
+        question: "Which type of endocytosis is known as 'cell drinking'?",
+        options: ["Pinocytosis", "Phagocytosis", "Exocytosis", "Osmosis"],
+        correct: 0
+    },
+    {
+        question: "Which type of endocytosis involves the engulfing of large particles such as bacteria?",
+        options: ["Pinocytosis", "Phagocytosis", "Exocytosis", "Osmosis"],
+        correct: 1
+    },
+    {
+        question: "What is exocytosis?",
+        options: ["The uptake of liquids into the cell", "The process of expelling materials from the cell", "The diffusion of oxygen", "The breakdown of food particles"],
+        correct: 1
+    },
+    {
+        question: "Which transport mechanism helps nerve cells release neurotransmitters?",
+        options: ["Endocytosis", "Osmosis", "Exocytosis", "Simple diffusion"],
+        correct: 2
+    },
+    {
+        question: "Which structure in the cell membrane acts as a barrier to water-soluble molecules?",
+        options: ["Carbohydrates", "Proteins", "Phospholipid bilayer", "DNA"],
+        correct: 2
+    },
+    {
+        question: "Which molecule stabilizes the fluidity of the cell membrane?",
+        options: ["Protein", "Cholesterol", "Glucose", "ATP"],
+        correct: 1
+    },
+    {
+        question: "Which process moves glucose into a cell without using energy?",
+        options: ["Osmosis", "Facilitated diffusion", "Active transport", "Phagocytosis"],
+        correct: 1
+    },
+    {
+        question: "What happens when a cell is in an isotonic solution?",
+        options: ["Water moves out of the cell", "Water moves into the cell", "Water moves equally in and out of the cell", "The cell undergoes mitosis"],
+        correct: 2
+    },
+    {
+        question: "Which type of solution causes plant cells to undergo plasmolysis?",
+        options: ["Hypotonic", "Isotonic", "Hypertonic", "Neutral"],
+        correct: 2
+    }
+];
+
+
+ 
+ const livesEl = document.getElementById('lives');
+ const timerEl = document.getElementById('timer');
+ const questionEl = document.getElementById('question');
+ const answersEl = document.getElementById('answers');
+ const startBtn = document.getElementById('startBtn');
+ const gameOverEl = document.getElementById('gameOver');
+ const refreshBtn = document.createElement('button'); // Create refresh button
+ const quizEl = document.getElementById('quiz');
+ 
+ let currentQuestion = 0;
+ let lives = 3;
+ let timer;
+ let timeLeft = 10;
+ let score = 0; // Initialize player score
+ 
+ // Function to shuffle questions array
+ function shuffleQuestions() {
+     for (let i = quizData.length - 1; i > 0; i--) {
+         const j = Math.floor(Math.random() * (i + 1));
+         [quizData[i], quizData[j]] = [quizData[j], quizData[i]]; // Swap elements
+     }
+ }
+ 
+ function loadQuestion() {
+     if (currentQuestion >= quizData.length) {
+         endGame();
+         return;
+     }
+ 
+     // Show quiz container
+     quizEl.style.display = 'block';
+ 
+     // Load current question
+     const q = quizData[currentQuestion];
+     questionEl.textContent = q.question;
+     answersEl.innerHTML = '';
+     q.options.forEach((option, index) => {
+         const btn = document.createElement('button');
+         btn.textContent = option;
+         btn.className = 'answer';
+         btn.addEventListener('click', () => handleAnswer(index));
+         answersEl.appendChild(btn);
+     });
+ 
+     resetTimer();
+ }
+ 
+ function handleAnswer(selected) {
+     const q = quizData[currentQuestion];
+     if (selected === q.correct) {
+         score++; // Increment score for correct answers
+         currentQuestion++;
+         loadQuestion();
+     } else {
+         lives--;
+         updateLives();
+         if (lives === 0) {
+             endGame();
+         }
+     }
+ }
+ 
+ function updateLives() {
+     livesEl.textContent = `Lives: ${lives}`;
+ }
+ 
+ function resetTimer() {
+     clearInterval(timer);
+     timeLeft = 10;
+     timerEl.textContent = `Time: ${timeLeft}`;
+     timer = setInterval(() => {
+         timeLeft--;
+         timerEl.textContent = `Time: ${timeLeft}`;
+         if (timeLeft === 0) {
+             lives--;
+             updateLives();
+             if (lives === 0) {
+                 endGame();
+             } else {
+                 currentQuestion++;
+                 loadQuestion();
+             }
+         }
+     }, 1000);
+ }
+ 
+ function endGame() {
+     clearInterval(timer);
+ 
+     // Hide game elements
+     questionEl.style.display = 'none';
+     answersEl.style.display = 'none';
+     livesEl.style.display = 'none';
+     timerEl.style.display = 'none';
+ 
+     // Display game over message and score
+     gameOverEl.style.display = 'block';
+     gameOverEl.textContent = `Your score is ${score}.`;
+ 
+     // Show refresh button
+     refreshBtn.textContent = "Play Again";
+     refreshBtn.className = 'start-btn';
+     refreshBtn.style.marginTop = '20px';
+     gameOverEl.appendChild(refreshBtn);
+ 
+     // Refresh the page when button is clicked
+     refreshBtn.addEventListener('click', () => {
+         location.reload();
+     });
+ }
+ 
+ // Start Button Click
+ startBtn.addEventListener('click', () => {
+     shuffleQuestions(); // Shuffle questions at the start
+     startBtn.style.display = 'none';
+     loadQuestion();
+ });
+ </script>
+ 
+
+</body>
+</html>
